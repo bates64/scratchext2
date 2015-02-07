@@ -14,7 +14,7 @@ function install() {
                 [' ', 'load libraries %m.from', 'load'],
                 ['r', 'total libraries loaded', 'loaded'],
                 ['-'],
-                [' ', 'load library %m.all', 'load1', 'all'],
+                [' ', 'prepare library %m.all', 'load1', 'all'],
                 ['-'],
                 ['b', 'scratchext is ready', 'installed'],
                 ['-'],
