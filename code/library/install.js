@@ -11,7 +11,7 @@ function install() {
             
         var desc = {
             blocks: [
-                [' ', 'load libraries %m.from', 'load'],
+                [' ', 'load libraries from the %m.from', 'load'],
                 ['r', 'total libraries loaded', 'loaded'],
                 ['-'],
                 [' ', 'prepare library %m.all', 'load1', 'all'],
@@ -23,7 +23,7 @@ function install() {
             ],
                 
             menus: {
-                from: ['notes and credits', 'blocks'],
+                from: ['notes and credits', 'prepare blocks'],
                 
                 // every scratchext lib must go here
                 all: ['all', 'web', 'project', 'keys', 'speech']
@@ -49,7 +49,7 @@ function install() {
         };
            
         ext.load = function(type) {
-            if(type==='blocks') {
+            if(type==='prepare blocks') {
                 // todo, maybe
             } else {
                 var re = /SCRATCHEXT=[A-Z]*/g,
