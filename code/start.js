@@ -51,7 +51,7 @@ function begin() {
 
         $('.installscratchext').on('click', function() {
             if(scratchext.installed.length===0) {
-                $.getScript('http://www.stefanbates.com/scratchext2/code/library/install.js');
+                $.getScript('https://rawgit.com/grannycookies/scratchext2/master/code/library/install.js');
                 swal({
                     title: "Aw, yeah!",
                     text: "ScratchExt 2.0 has been installed!",
@@ -60,7 +60,7 @@ function begin() {
                     allowOutsideClick: true
                 });
             } else {
-                $.getScript('http://www.stefanbates.com/scratchext2/code/library/install.js');
+                $.getScript('https://rawgit.com/grannycookies/scratchext2/master/code/library/install.js');
                 swal({
                     title: "Whoa!",
                     text: "What are you doing?\nScratchExt is already installed!",
