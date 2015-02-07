@@ -1,147 +1,119 @@
-function installExtension() {
+function installExtensionProject() {
     (function(ext) {
+
         ext._getStatus = function() {
             return {
                 status: 2,
                 msg: 'Installed'
             };
         };
+
         var descriptor = {
             blocks: [
-                [' ', 'open %s %m.tab', 'open', 'http://scratch.mit.edu', 'in this window'],
-                [' ', 'set tab name to %s', 'title', 'Tab'],
-                [' ', 'open user profile of %s %m.tab', 'useropen', 'GrannyCookies', 'in a new tab'],
-                [' ', 'open youtube video https://www.youtube.com/watch?v= %s %m.tab', 'youtube', 'oHg5SJYRHA0', 'in a new tab'],
+                [' ', 'change mode to %m.modes', 'changeMode', 'fullscreen'],
+                ['b', '%m.modes', 'mode', 'viewer'],
                 ['-'],
-                ['r', 'current URL', 'url'],
-                ['r', 'tab name', 'tabName'],
-                ['r', 'browser name', 'browser'],
-                ['r', 'browser version', 'version'],
-                ['r', 'full browser version', 'versionlong'],
+                //[' ', 'hide top bar and go into embed mode', 'hide'],
+                ['r', 'project id', 'pID'],
+                ['r', 'project notes and credits', 'notes'],
+                ['r', 'project instructions', 'instructions'],
+                ['b', 'is project "new"?', 'new'],
                 ['-'],
-                ['w', 'shout title %s description %s type %m.types', 'message', 'Hello!', 'ScratchExt is awesome!', 'success'],
-                ['R', 'ask title %s description %s yes %s no %s type %m.types', 'ask', 'Hey there!', 'Is ScratchExt awesome?', 'Of course!', 'No way.', 'success'],
+                ['r', 'is user an admin?', 'admin']
+
+
             ],
-
             menus: {
-                types: ['info', 'success', 'warning', 'error'],
-                tab: ['in a new tab', 'in this window']
-            },
-
-            url: 'http://stefanbates.com/scratchext2/help/web/'
+                modes: ['viewer', 'fullscreen', 'editor']
+            }
         };
 
-        // browser stuff
-        ext.browser = function() {
-            return browserName;
-        };
-        ext.version = function() {
-            return majorVersion;
-        };
-        ext.versionlong = function() {
-            return fullVersion;
+        // gets "new" ness
+        ext.new = function() {
+            return Scratch.INIT_DATA.PROJECT.is_new;
         };
 
-        //External links
-        ext.title = function(src) {
-            document.title = src;
+        // gets notes and credits of project
+        ext.notes = function() {
+            return Scratch.INIT_DATA.PROJECT.model.notes;
         };
 
-        ext.open = function(url, tab) {
-            swal({
-                title: 'Um...',
-                text: 'Would you like to open ' + url + '?\n(' + tab + ')',
-                type: 'info',
-                showCancelButton: true,
-                closeOnCancel: true,
-                closeOnConfirm: true,
-            }, function() {
-                if (tab === "in a new tab")
-                    window.open(url);
-                else
-                    location.href = (url);
-            });
+        // gets notes and credits of project
+        ext.instructions = function() {
+            return Scratch.INIT_DATA.PROJECT.model.credits;
         };
 
-        ext.useropen = function(src, tab) {
-            swal({
-                title: 'Um...',
-                text: 'Would you like to open ' + src + '\'s profile?\n(' + tab + ')',
-                type: 'info',
-                showCancelButton: true,
-                closeOnCancel: true,
-                closeOnConfirm: true,
-            }, function() {
-                if (tab === "in a new tab")
-                    window.open('http://scratch.mit.edu/users/' + src);
-                else
-                    location.href = ('http://scratch.mit.edu/users/' + src);
-            });
-        };
-        ext.youtube = function(url, tab) {
-            swal({
-                title: 'Um...',
-                text: 'Would you like to watch a youtube video?\n(' + tab + ')',
-                type: 'info',
-                showCancelButton: true,
-                closeOnCancel: true,
-                closeOnConfirm: true,
-            }, function() {
-                if (tab === "in a new tab")
-                    window.open('http://scratch.mit.edu/discuss/youtube/' + url);
-                else
-                    location.href = ('http://scratch.mit.edu/discuss/youtube/' + url);
-            });
+        // gets adminised status of current user
+        ext.admin = function() {
+            return Scratch.INIT_DATA.ADMIN;
         };
 
-        //Project ID
+        // get username
+        ext.user = function() {
+            return Scratch.INIT_DATA.LOGGED_IN_USER.model ? Scratch.INIT_DATA.LOGGED_IN_USER.model.username : null;
+        };
+
+        // frame blocks
+        ext.trigger = function() {
+            hatsComplete = totalHats;
+        };
+        ext.setHats = function(hats) {
+            totalHats = hats;
+        };
+        ext.runFrame = function() {
+            run = true;
+            // wait until all completeFrame blocks have set their var to false
+            run = false;
+        };
+        ext.whenFrame = function() {
+            if (hatsComplete === totalHats) {
+                hatsComplete = 0;
+                return true;
+            }
+            return false;
+        };
+        ext.completeFrame = function() {
+            hatsComplete++;
+        };
+
+        //Get viewing mode
+        ext.mode = function(mode) {
+            if (mode === 'fullscreen') {
+                return document.URL.slice(-11) === '#fullscreen';
+            } else if (mode === 'editor') {
+                return Scratch.FlashApp.isEditMode;
+            } else {
+                return document.URL.slice(-7) != '#editor' && document.URL.slice(-11) != '#fullscreen';
+            }
+        };
+
+        //Set viewing mode
+        ext.changeMode = function(mode) {
+            switch (mode) {
+                case 'viewer':
+                    Scratch.FlashApp.setEditMode(false);
+                    break;
+                case 'fullscreen':
+                    window.location = document.URL.slice(0, 41) + '#fullscreen';
+                    break;
+                case 'editor':
+                    Scratch.FlashApp.setEditMode(true);
+                    break;
+            }
+        };
+
+        //Get project ID
         ext.pID = function() {
             return document.URL.substring(32, 40);
         };
 
-        //Page info
-        ext.tabName = function(src) {
-            return document.title;
-        };
-        ext.url = function() {
-            return document.URL;
-        };
-        ext.net = function() {
-            return window.navigator.onLine();
-        };
-
-
-        //Dialogs
-        ext.message = function(title, text, type, callback) {
-            swal({
-                    title: title,
-                    text: text,
-                    showCancelButton: false,
-                    confirmButtonText: 'Okay',
-                    type: type
-                },
-                function(isConfirm) {
-                    callback(isConfirm);
-                });
-        };
-
-        ext.ask = function(title, text, yes, no, type, callback) {
-            var callback2me = callback;
-            swal({
-                    title: title,
-                    text: text,
-                    showCancelButton: true,
-                    cancelButtonText: no,
-                    confirmButtonText: yes,
-                    type: type
-                },
-                function(isConfirm) {
-                    callback2me(isConfirm);
-                });
+        ext.close = function() {
+            document.body.innerHTML = document.body.innerHTML.replace('viewer', 'Project Closed.');
+            document.body.innerHTML = document.body.innerHTML.replace('editor', 'Project Closed.');
+            document.body.innerHTML = document.body.innerHTML.replace('viewer editor', 'Project Closed.');
         };
 
         scratchext.install('Project', descriptor, ext);
     })({});
 }
-
-installExtension();
+installExtensionProject();
