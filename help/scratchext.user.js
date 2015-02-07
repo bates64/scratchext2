@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         ScratchExt 2.0
 // @version      2.0
-// @description  Alpha - in development!
+// @description  In development!
 // @grant        GM_setClipboard
 // @grant        unsafeWindow
 // @match        *://scratch.mit.edu/projects/*
@@ -10,6 +10,6 @@
 var js = document.createElement("script");
 
 js.type = "text/javascript";
-js.src = 'http://www.stefanbates.com/scratchext2/code/start.js';
+js.src = 'https://raw.githubusercontent.com/GrannyCookies/scratchext2/master/code/start.js';
 
 document.body.appendChild(js);
