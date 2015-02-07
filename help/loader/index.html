@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        Loader | ScratchExt 2.0
+    </title>
+    
+    <script src="../pretty/js/jquery.js"></script>
+    <script src="../pretty/js/main.js"></script>
+    
+    <!--<link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,700,300' rel='stylesheet' type='text/css'>-->
+    <link href="../pretty/css/style.css" rel="stylesheet" type="text/css">
+    
+    <!-- scratchblocks -->
+    <link rel="stylesheet" href="http://blob8108.github.io/scratchblocks2/scratchblocks2.css">
+    <script src="http://blob8108.github.io/scratchblocks2/scratchblocks2.js"></script>
+
+    <script>
+    $(document).ready(function() {
+        scratchblocks2.parse();
+    });
+    </script>
+</head>
+
+<body>
+    <div id="wrapper">
+    
+        <h1>ScratchExt 2.0 Help</h1>
+        <h3>Loader library</h3>
+        
+        <p>
+            This is the default ScratchExt library.
+        </p>
+        
+        <hr>
+        <h3>Blocks</h3>
+        
+        <pre class="blocks big">
+        load libraries ::extension
+        </pre>
+        The "load libraries" block installs the libraries specified in the <b>notes & credits</b>.<br>
+        To specify a library to load, simply add this to your <b>notes & credits</b>:
+        <a href="notesExample.png"><img src="notesExample.png"></a><br>
+        You can have as many as you like, and they are case-insensitive.<br>
+        Make sure you user a <b>semicolon</b> a the end of each install.<br>
+        Here are the libraries you can use, as of now.<br>
+        <pre class="blocks">
+        ScratchExt=[web]; ::motion //ScratchExt "Web" library
+        ScratchExt=[keys]; ::operators //ScratchExt "Keys" library
+        </pre>
+        
+        <hr>
+        <pre class="blocks big">
+        libraries loaded ::extension boolean
+        </pre>
+        The "libraries loaded" block returns the number of libraries installed <b>by ScratchExt only</b>, excluding the "Loader" library.
+        
+        <hr>
+        <pre class="blocks big">
+        is scratchext loaded? ::extension boolean
+        </pre>
+        The "is scratchext loaded?" block returns <i>true</i> all the time, except when ScratchExt has not been installed.
+        
+    </div>
+</body>
+
+</html>

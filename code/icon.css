@@ -1,0 +1,28 @@
+.scratchexticon {
+    background-position: 0 -113px;
+    opacity: 1 !important;
+    transition: 250ms all;
+}
+
+.scratchexticon:hover {
+    cursor: pointer;
+    background-position: 0 -142px;
+}
+
+#editorInstall {
+    z-index: 999;
+    position: absolute;
+    bottom: 10px;
+    left: 6px;
+    zoom: 2;
+    background: url("http://cdn.scratch.mit.edu/scratchr2/static/__7aa8454d4311dd1140d332d797f6ca21__/images/stats-icons-dark.058048e8a3c1.png") no-repeat top;
+    background-position: 0 -113px;
+    width: 32px;
+    height: 32px;
+    transition: 250ms all;
+}
+
+#editorInstall:hover {
+    cursor: pointer;
+    background-position: 0 -142px;
+}

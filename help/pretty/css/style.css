@@ -1,0 +1,121 @@
+body {
+    margin: 0;
+    background: white;
+    
+    font-family: 'Roboto Slab', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+::selection{
+    background:#ff12ae;
+    color:#fff
+}
+
+a {
+    text-decoration: none;
+    transition: color 150ms ease-in-out;
+    font-weight: 600;
+    color: #369FFF;
+}
+
+a:hover {
+    color: #2371B9;
+}
+
+hr {
+    margin: 20px;
+}
+
+a pre {
+    transition: 250ms all;
+}
+
+a pre:hover {
+    opacity: 0.5;
+}
+
+img {
+    border: 1px solid black;
+    margin: 10px;
+    transition: 250ms all;
+}
+
+img:hover {
+    opacity: 0.5;
+}
+
+p {
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+pre.big {
+    zoom: 2;
+}
+
+pre.med {
+    zoom: 1.5;
+}
+
+pre {
+    margin: 0;
+}
+
+#wrapper {
+    position: absolute;
+    top: 25%;
+    
+    padding-bottom: 25%;
+    
+    min-width: 200px;
+    max-width: 800px;
+    
+    width: 100%;
+    
+    margin: 10px;
+    
+    background-color: white;
+}
+
+h1 {
+    font-size: 64px;
+    font-weight: 600;
+    
+    margin: 5px;
+}
+
+h2 {
+    font-size: 56px;
+    font-weight: 600;
+    
+    margin: 5px;
+}
+
+h3 {
+    font-size: 48px;
+    font-weight: 500;
+    
+    margin: 5px;
+}
+
+h4 {
+    font-size: 36px;
+    font-weight: 500;
+    
+    margin: 5px;
+}
+
+h5 {
+    font-size: 28px;
+    font-weight: 400;
+    
+    margin: 5px;
+}
+
+h6 {
+    font-size: 21px;
+    font-weight: 400;
+    
+    margin: 5px;
+}
