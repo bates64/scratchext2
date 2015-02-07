@@ -6,23 +6,34 @@ function install() {
                 msg: comment
             };
         };
+        
+        var toLoad = [];
             
         var desc = {
             blocks: [
-                [' ', 'load libraries', 'load'],
-                ['r', 'libraries loaded', 'loaded'],
+                [' ', 'load libraries %from', 'load'],
+                ['r', 'total libraries loaded', 'loaded'],
                 ['-'],
-                ['b', 'is scratchext loaded?', 'installed'],
+                [' ', 'load library %all', 'load1', 'all'],
                 ['-'],
-                ['B', 'click to share project', 'share'],
-                [' ', 'change project title to %s', 'title', Scratch.INIT_DATA.PROJECT.model.title]
+                ['b', 'scratchext is ready', 'installed'],
+                ['-'],
+                ['B', 'TEMP: click to share project', 'share'],
+                [' ', 'TEMP: change project title to %s', 'title', Scratch.INIT_DATA.PROJECT.model.title]
             ],
                 
             menus: {
+                from: ['notes and credits', 'blocks'],
                 
+                // every scratchext lib must go here
+                all: ['all', 'web', 'project', 'keys']
             },
                 
             url: 'http://stefanbates.com/scratchext2/help/loader/'
+        };
+        
+        ext.load1 = function(lib) {
+            toLoad.push(lib.toLowerCase());
         };
         
         ext.title = function(e) {
@@ -37,16 +48,19 @@ function install() {
             return true;
         };
            
-        ext.load = function() {
-            var toLoad = [],
-                re = /SCRATCHEXT=[A-Z]*/g,
+        ext.load = function(type) {
+            if(type==='blocks') {
+                // todo, maybe
+            } else {
+                var re = /SCRATCHEXT=[A-Z]*/g,
                 s = scratchext.notes().toString(),
                 item,
                 i = 0;
                 
-            while(item = re.exec(s)) {
-                if(item[0]!=="INSTALL") {
-                    toLoad.push(item[0].substring(11, item[0].length).toLowerCase());
+                while(item = re.exec(s)) {
+                    if(item[0]!=="INSTALL") {
+                        toLoad.push(item[0].substring(11, item[0].length).toLowerCase());
+                    }
                 }
             }
             
