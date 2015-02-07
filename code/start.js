@@ -35,7 +35,7 @@ function begin() {
     addJS('http://www.stefanbates.com/scratchext2/code/sweet-alert.min.js');
 
     setTimeout(function() {
-        scratchext.log('Started', 'green');
+        scratchext.log('GITHUB VER LOADED', 'green');
         
         // install buttons
         $('.stats').first().append('<div class="action tooltip bottom installscratchext"><span class="scratchexticon icon">ScratchExt</span></div>');
