@@ -78,7 +78,7 @@ function begin() {
         creator: Scratch.INIT_DATA.PROJECT.model.creator,
         installed: [],
         id: Scratch.INIT_DATA.PROJECT.model.id,
-        root: 'http://htmlpreview.github.io/?https://github.com/GrannyCookies/scratchext2/blob/master/code/'
+        root: 'https://rawgit.com/GrannyCookies/scratchext2/blob/master/code/'
     };
 
     scratchext.projectJSON = function(id, callback) {
