@@ -1,3 +1,2 @@
-# scratchext2
-ScratchExt 2.0
-ScratchExt 2.0 Github. What else?
+# ScratchExt 2.0
+Source code for ScratchExt 2.0.
