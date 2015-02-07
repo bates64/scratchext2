@@ -11,10 +11,10 @@ function install() {
             
         var desc = {
             blocks: [
-                [' ', 'load libraries %from', 'load'],
+                [' ', 'load libraries %m.from', 'load'],
                 ['r', 'total libraries loaded', 'loaded'],
                 ['-'],
-                [' ', 'load library %all', 'load1', 'all'],
+                [' ', 'load library %m.all', 'load1', 'all'],
                 ['-'],
                 ['b', 'scratchext is ready', 'installed'],
                 ['-'],
