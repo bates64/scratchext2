@@ -11,7 +11,7 @@ function install() {
             
         var desc = {
             blocks: [
-                [' ', 'load libraries from the %m.from', 'load'],
+                [' ', 'load libraries from the %m.from', 'load', 'notes and credits'],
                 ['r', 'total libraries loaded', 'loaded'],
                 ['-'],
                 [' ', 'prepare library %m.all', 'load1', 'all'],
