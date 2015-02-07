@@ -51,7 +51,7 @@ function begin() {
 
         $('.installscratchext').on('click', function() {
             if(scratchext.installed.length===0) {
-                $.getScript('https://cdn.rawgit.com/grannycookies/scratchext2/master/code/library/install.js');
+                $.getScript(scratchext.root + '/library/install.js');
                 swal({
                     title: "Aw, yeah!",
                     text: "ScratchExt 2.0 has been installed!",
@@ -60,7 +60,7 @@ function begin() {
                     allowOutsideClick: true
                 });
             } else {
-                $.getScript('https://cdn.rawgit.com/grannycookies/scratchext2/master/code/library/install.js');
+                $.getScript(scratchext.root + '/library/install.js');
                 swal({
                     title: "Whoa!",
                     text: "What are you doing?\nScratchExt is already installed!",
@@ -77,7 +77,8 @@ function begin() {
         username: Scratch.INIT_DATA.LOGGED_IN_USER.model.username,
         creator: Scratch.INIT_DATA.PROJECT.model.creator,
         installed: [],
-        id: Scratch.INIT_DATA.PROJECT.model.id
+        id: Scratch.INIT_DATA.PROJECT.model.id,
+        root: 'http://htmlpreview.github.io/?https://github.com/GrannyCookies/scratchext2/blob/master/code/'
     };
 
     scratchext.projectJSON = function(id, callback) {
