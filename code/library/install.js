@@ -26,7 +26,7 @@ function install() {
                 from: ['notes and credits', 'blocks'],
                 
                 // every scratchext lib must go here
-                all: ['all', 'web', 'project', 'keys']
+                all: ['all', 'web', 'project', 'keys', 'speech']
             },
                 
             url: 'http://stefanbates.com/scratchext2/help/loader/'
