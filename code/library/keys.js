@@ -74,9 +74,9 @@ function extKeys() {
                 ['h', 'when key %m.keys is pressed', 'h_check_key', 'shift'],
                 ['b', 'key %m.keys pressed?', 'check_key', 'shift'],
                 ['-'],
-                ['R', '%n to keyname', 'toName', '72'],
-                ['R', '%s to keycode', 'toCode', 'H'],
-                ['r', 'keycode currently down', 'which_key']
+                //['R', '%n to keyname', 'toName', '72'],
+                //['R', '%s to keycode', 'toCode', 'H'],
+                //['r', 'keycode currently down', 'which_key']
             ],
                 
             menus: {
