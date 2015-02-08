@@ -16,7 +16,14 @@ function go() {
 
     $('.installscratchext').on('click', function() {
         if(scratchext.installed.length===0) {
+            // install install library
             $.getScript(scratchext.root + '/library/install.js');
+            
+            // if the author of the project is you, load the settings library
+            if(scratchext.author) {
+                $.getScript(scratchext.root + '/library/settings.js');
+            }
+            
             swal({
                 title: "Aw, yeah!",
                 text: "ScratchExt 2.0 has been installed!",
