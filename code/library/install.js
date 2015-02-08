@@ -65,6 +65,7 @@ function install() {
             }
             
             // actually load
+            scratchext.log('Loading libaries:\n'+toLoad);
             while(i<toLoad.length) {
                 $.getScript('https://cdn.rawgit.com/grannycookies/scratchext2/master/code/library/'+toLoad[i]+'.js').fail(function() {
                     lights = 3;
