@@ -7,6 +7,10 @@ var scratchext = {
     root: 'https://rawgit.com/GrannyCookies/scratchext2/master/code/'
 };
 
+scratchext.getWiki = function(lib) {
+    return 'http://grannycookies.github.io/scratchext2/help/' + lib + '/';
+};
+
 scratchext.projectJSON = function(id, callback) {
     $.get("http://projects.scratch.mit.edu/internalapi/project/"+id.toString()+"/get/", function(data) {
         callback(data);
