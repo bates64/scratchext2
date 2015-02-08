@@ -2,6 +2,7 @@
 var scratchext = {
     username: Scratch.INIT_DATA.LOGGED_IN_USER.model.username,
     creator: Scratch.INIT_DATA.PROJECT.model.creator,
+    author: Scratch.INIT_DATA.LOGGED_IN_USER.model.username === Scratch.INIT_DATA.PROJECT.model.creator,
     installed: [],
     id: Scratch.INIT_DATA.PROJECT.model.id,
     root: 'https://rawgit.com/GrannyCookies/scratchext2/master/code/'
