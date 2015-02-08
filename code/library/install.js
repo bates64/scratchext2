@@ -65,9 +65,9 @@ function install() {
             }
             
             // actually load
-            scratchext.log('Loading libaries:\n'+toLoad);
+            scratchext.log('Loading libaries:\n'+toLoad, 'red');
             while(i<toLoad.length) {
-                $.getScript('https://cdn.rawgit.com/grannycookies/scratchext2/master/code/library/'+toLoad[i]+'.js').fail(function() {
+                $.getScript('https://rawgit.com/grannycookies/scratchext2/master/code/library/'+toLoad[i]+'.js').fail(function() {
                     lights = 3;
                     comment = 'Could not load a library.';
                     swal({
