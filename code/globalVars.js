@@ -59,5 +59,16 @@ scratchext.addCSS = function(url) {
     document.getElementsByTagName("HEAD")[0].appendChild(link);
 };
 
+// show/hide scratchext editor button if in editor or not
+scratchext.editShow = setInterval(function() {
+    if(scratchext.editMode()) {
+        $('.editorOnly').show();
+        $('.playerOnly').hide();
+    } else {
+        $('.editorOnly').hide();
+        $('.playerOnly').show();
+    }
+}, 10);
+
 // tell other file that scratchext has loaded
 go();
