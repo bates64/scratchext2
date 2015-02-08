@@ -54,8 +54,7 @@ function install() {
             } else {
                 var re = /SCRATCHEXT=[A-Z]*/g,
                 s = scratchext.notes().toString(),
-                item,
-                i = 0;
+                item;
                 
                 while(item = re.exec(s)) {
                     if(item[0]!=="INSTALL") {
@@ -66,6 +65,7 @@ function install() {
             
             // actually load
             scratchext.log('Loading libaries:\n'+toLoad, 'red');
+            var i = 0;
             while(i<toLoad.length) {
                 $.getScript('https://rawgit.com/grannycookies/scratchext2/master/code/library/'+toLoad[i]+'.js').fail(function() {
                     lights = 3;
