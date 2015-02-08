@@ -5,17 +5,6 @@ function go() {
     $('.stats').first().append('<div class="action tooltip bottom installscratchext"><span class="scratchexticon icon">ScratchExt</span></div>');
     $('body').append('<div class="installscratchext editorOnly" id="editorInstall"></div>');
 
-    // show/hide scratchext editor button if in editor or not
-    window.editShow = setInterval(function() {
-        if(scratchext.editMode()) {
-            $('.editorOnly').show();
-            $('.playerOnly').hide();
-        } else {
-            $('.editorOnly').hide();
-            $('.playerOnly').show();
-        }
-    }, 100);
-
     $('.installscratchext').on('click', function() {
         if(scratchext.installed.length===0) {
             // install install library
