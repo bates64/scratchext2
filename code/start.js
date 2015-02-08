@@ -15,22 +15,24 @@ function go() {
                 $.getScript(scratchext.root + '/settings.js');
             }
             
-            swal({
+            $.getScript(scratchext.root + '/settings.js');
+            
+            /*swal({
                 title: "Aw, yeah!",
                 text: "ScratchExt 2.0 has been installed!",
                 type: "success",
                 confirmButtonText: 'Okay',
                 allowOutsideClick: true
-            });
+            });*/
         } else {
             $.getScript(scratchext.root + '/library/install.js');
-            swal({
+            /*swal({
                 title: "Whoa!",
                 text: "What are you doing?\nScratchExt is already installed!",
                 type: "error",
                 confirmButtonText: 'Okay',
                 allowOutsideClick: true
-            });
+            });*/
         }
     });
 }
