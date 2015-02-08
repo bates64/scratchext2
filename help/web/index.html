@@ -37,14 +37,9 @@
         <h3>Blocks</h3>
         
         <pre class="blocks big">
-        download[a file url] ::extension
+        open[scratch.mit.edu][in new tab] ::extension
         </pre>
-        The "load libraries" block installs the libraries specified in the <b>notes & credits</b>.<br>
-        To specify a library to load, simply add this to your <b>notes & credits</b>:
-        <a href="notesExample.png"><img src="notesExample.png"></a><br>
-        You can have as many as you like, and they are case-insensitive.<br>
-        Make sure you user a <b>semicolon</b> a the end of each install.<br>
-        Here are the libraries you can use, as of now.<br>
+        The open webpage block will open any URL.
         <pre class="blocks">
         ScratchExt=[Web]; ::motion //ScratchExt "Web" library
         ScratchExt=[Other]; ::operators //ScratchExt "Other" library
@@ -52,15 +47,16 @@
         
         <hr>
         <pre class="blocks big">
-        libraries loaded ::extension boolean
+        set tab name to [Tab] ::extension
         </pre>
-        The "libraries loaded" block returns the number of libraries installed <b>by ScratchExt only</b>, excluding the "Loader" library.
+        The set tab name block will change the name your browser shows on the tab.
         
         <hr>
         <pre class="blocks big">
-        is scratchext loaded? ::extension boolean
+        open user profile of [GrannyCookies][in new tab] ::extension
         </pre>
-        The "is scratchext loaded?" block returns <i>true</i> all the time, except when ScratchExt has not been installed.
+        This block will open a webpage of whatever user you specify.
+        
         
     </div>
 </body>
