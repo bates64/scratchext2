@@ -16,3 +16,9 @@
   font-weight: bold;
   border-radius: 7px;
 }
+
+.project-status-bar {
+  background-color: #F5D6EA;
+  color: #773CA0;
+  border: 1px solid #ABABAB;
+}
