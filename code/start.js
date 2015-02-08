@@ -39,6 +39,7 @@ function begin() {
             setTimeout(go, 500);
             return;
         }
+        
         scratchext.log('Loaded ScratchExt 2.0', 'green');
         
         // install buttons
@@ -77,6 +78,7 @@ function begin() {
         });
     }
     
+    $.getScript('https://rawgit.com/GrannyCookies/scratchext2/master/code/globalVars.js');
     setTimeout(go, 500);
 }
 
