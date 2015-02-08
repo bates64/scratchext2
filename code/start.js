@@ -6,7 +6,7 @@ function go() {
     $('body').append('<div class="installscratchext editorOnly" id="editorInstall"></div>');
 
     // show/hide scratchext editor button if in editor or not
-    setInterval(function() {
+    window.editShow = setInterval(function() {
         if(scratchext.editMode()) {
             $('.editorOnly').show();
             $('.playerOnly').hide();
@@ -14,7 +14,7 @@ function go() {
             $('.editorOnly').hide();
             $('.playerOnly').show();
         }
-    }, 1);
+    }, 100);
 
     $('.installscratchext').on('click', function() {
         if(scratchext.installed.length===0) {
