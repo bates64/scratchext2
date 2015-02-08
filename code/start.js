@@ -73,5 +73,5 @@ function begin() {
     setTimeout("$.getScript('https://rawgit.com/GrannyCookies/scratchext2/master/code/globalVars.js')", 1000);
 }
 
-$.getScript('https://rawgit.com/GrannyCookies/scratchext2/master/code/linkify.js');
+//$.getScript('https://rawgit.com/GrannyCookies/scratchext2/master/code/linkify.js');
 begin();
