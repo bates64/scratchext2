@@ -89,7 +89,7 @@ function installExtensionWeb() {
                 tab: ['in a new tab', 'in this window']
             },
             
-            url: 'http://stefanbates.com/scratchext2/help/web/'
+            url: scratchext.getWiki('web')
         };
         
         // browser stuff
