@@ -23,9 +23,12 @@ function installExtensionProject() {
 
 
             ],
+            
             menus: {
                 modes: ['viewer', 'fullscreen', 'editor']
-            }
+            },
+            
+            url: scratchext.getWiki('keys')
         };
 
         // gets "new" ness
