@@ -1,5 +1,4 @@
 // this code is run if the user has created the project
-
 if(!scratchext.isShared) {
   // project is unshared
   scratchext.log('replacing share button');
@@ -12,3 +11,5 @@ if(!scratchext.isShared) {
   
   $('.public').text('ScratchExt 2.0 has overwritten the share buttons to allow you to share freely.');
 }
+
+$('#owner').text('you');
