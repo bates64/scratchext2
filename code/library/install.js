@@ -29,7 +29,7 @@ function install() {
                 all: ['all', 'web', 'project', 'keys', 'speech']
             },
                 
-            url: 'http://grannycookies.github.io/scratchext2/help/loader/'
+            url: scratchext.getWiki('loader')
         };
         
         ext.load1 = function(lib) {
