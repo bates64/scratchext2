@@ -1,5 +1,5 @@
-# ScratchExt 2.0
-Source code for ScratchExt 2.0.
+# ScratchExt 2.0 Help Site
+ScratchExt 2.0 Wiki/Help.
 
-##Install ScratchExt!
-http://stefanbates.com/scratchext2/help/
+##View it on Github Pages!
+http://grannycookies.github.io/scratchext2/
