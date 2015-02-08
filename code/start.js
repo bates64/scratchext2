@@ -46,9 +46,6 @@ function begin() {
         // change title
         $('.modal-header').html('<h3>Please login to use ScratchExt!</h3>');
 
-        // hide "or join scratch"
-        $('a[data-control="registration"]').remove();
-
         // stop below code
         throw new Error('User not logged in!');
     }
