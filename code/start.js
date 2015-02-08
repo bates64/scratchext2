@@ -5,7 +5,7 @@ function go() {
     $('.stats').first().append('<div class="action tooltip bottom installscratchext"><span class="scratchexticon icon">ScratchExt</span></div>');
     
     addCSS(scratchext.root + '/css/scratchext-editor-btn');
-    $('body').append('<div class="installscratchext editorOnly" id="editorInstall">ScratchExt</div>');
+    $('body').append('<div class="installscratchext editorOnly" id="editorInstall-new">ScratchExt</div>');
 
     $('.installscratchext').on('click', function() {
         if(scratchext.installed.length===0) {
