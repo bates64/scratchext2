@@ -15,7 +15,7 @@ function go() {
                 $.getScript(scratchext.root + '/settings.js');
             }
             
-            $.getScript(scratchext.root + '/settings.js');
+            //$.getScript(scratchext.root + '/settings.js');
             
             /*swal({
                 title: "Aw, yeah!",
