@@ -7,7 +7,7 @@ function install() {
             };
         };
         
-        var toLoad = [];
+        window.toLoad = [];
             
         var desc = {
             blocks: [
