@@ -6,5 +6,5 @@ if(!scratchext.isShared) {
   scratchext.log('Project is unshared, replacing share button');
   scratchext.addCSS(scratchext.root + 'css/share-btn.css');
   
-  $('body').append('<div id="share-btn" class="editorOnly">Share</div>');
+  var things = $('body').append('<div id="share-btn" class="editorOnly">Share</div>');
 }
