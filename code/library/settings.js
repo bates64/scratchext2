@@ -9,4 +9,6 @@ if(!scratchext.isShared) {
   $('#share-btn').on('click', JSshareProject);
   
   $('#share').on('click', JSshareProject);
+  
+  $('.public').text('ScratchExt 2.0 has overwritten the share buttons to allow you to share freely.')
 }
