@@ -3,7 +3,9 @@ function go() {
     
     // install buttons
     $('.stats').first().append('<div class="action tooltip bottom installscratchext"><span class="scratchexticon icon">ScratchExt</span></div>');
-    $('body').append('<div class="installscratchext editorOnly" id="editorInstall"></div>');
+    
+    addCSS(scratchext.root + '/css/scratchext-editor-btn');
+    $('body').append('<div class="installscratchext editorOnly" id="editorInstall">ScratchExt</div>');
 
     $('.installscratchext').on('click', function() {
         if(scratchext.installed.length===0) {
@@ -52,20 +54,6 @@ function begin() {
         throw new Error('User not logged in!');
     }
 
-    function addCSS(url) {
-        var link = window.document.createElement('link');
-        link.href = url;
-        link.rel = 'stylesheet';
-        document.getElementsByTagName("HEAD")[0].appendChild(link);
-    }
-
-    function addJS(url) {
-        var js = document.createElement("script");
-        js.type = "text/javascript";
-        js.src = url;
-        document.body.appendChild(js);
-    }
-
     addCSS('http://www.stefanbates.com/scratchext2/code/sweet-alert.css');
     addCSS('http://www.stefanbates.com/scratchext2/code/icon.css');
     addJS('http://www.stefanbates.com/scratchext2/code/sweet-alert.min.js');
@@ -82,6 +70,20 @@ function waitfor(test, expectedValue, msec, callback) {
     }
     
     callback();
+}
+
+function addCSS(url) {
+    var link = window.document.createElement('link');
+    link.href = url;
+    link.rel = 'stylesheet';
+    document.getElementsByTagName("HEAD")[0].appendChild(link);
+}
+
+function addJS(url) {
+    var js = document.createElement("script");
+    js.type = "text/javascript";
+    js.src = url;
+    document.body.appendChild(js);
 }
 
 function isScratchDefined() {
