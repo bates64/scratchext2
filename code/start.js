@@ -1,3 +1,42 @@
+function go() {
+    scratchext.log('Loaded ScratchExt 2.0');
+    
+    // install buttons
+    $('.stats').first().append('<div class="action tooltip bottom installscratchext"><span class="scratchexticon icon">ScratchExt</span></div>');
+    $('body').append('<div class="installscratchext" id="editorInstall"></div>');
+
+    // show/hide scratchext editor button if in editor or not
+    setInterval(function() {
+        if(scratchext.editMode()) {
+            $('#editorInstall').show();
+        } else {
+            $('#editorInstall').hide();
+        }
+    }, 1);
+
+    $('.installscratchext').on('click', function() {
+        if(scratchext.installed.length===0) {
+            $.getScript(scratchext.root + '/library/install.js');
+            swal({
+                title: "Aw, yeah!",
+                text: "ScratchExt 2.0 has been installed!",
+                type: "success",
+                confirmButtonText: 'Okay',
+                allowOutsideClick: true
+            });
+        } else {
+            $.getScript(scratchext.root + '/library/install.js');
+            swal({
+                title: "Whoa!",
+                text: "What are you doing?\nScratchExt is already installed!",
+                type: "error",
+                confirmButtonText: 'Okay',
+                allowOutsideClick: true
+            });
+        }
+    });
+}
+
 function begin() {
     if(Scratch.INIT_DATA.LOGGED_IN_USER.model===undefined) {
         // user not logged in, log them in
@@ -33,47 +72,7 @@ function begin() {
     addCSS('http://www.stefanbates.com/scratchext2/code/sweet-alert.css');
     addCSS('http://www.stefanbates.com/scratchext2/code/icon.css');
     addJS('http://www.stefanbates.com/scratchext2/code/sweet-alert.min.js');
-
-    function go() {
-        scratchext.log('Loaded ScratchExt 2.0', 'green');
-        
-        // install buttons
-        $('.stats').first().append('<div class="action tooltip bottom installscratchext"><span class="scratchexticon icon">ScratchExt</span></div>');
-        $('body').append('<div class="installscratchext" id="editorInstall"></div>');
-
-        // show/hide scratchext editor button if in editor or not
-        setInterval(function() {
-            if(scratchext.editMode()) {
-                $('#editorInstall').show();
-            } else {
-                $('#editorInstall').hide();
-            }
-        }, 1);
-
-        $('.installscratchext').on('click', function() {
-            if(scratchext.installed.length===0) {
-                $.getScript(scratchext.root + '/library/install.js');
-                swal({
-                    title: "Aw, yeah!",
-                    text: "ScratchExt 2.0 has been installed!",
-                    type: "success",
-                    confirmButtonText: 'Okay',
-                    allowOutsideClick: true
-                });
-            } else {
-                $.getScript(scratchext.root + '/library/install.js');
-                swal({
-                    title: "Whoa!",
-                    text: "What are you doing?\nScratchExt is already installed!",
-                    type: "error",
-                    confirmButtonText: 'Okay',
-                    allowOutsideClick: true
-                });
-            }
-        });
-    }
     
-    // scratchext.* stuff
     $.getScript('https://rawgit.com/GrannyCookies/scratchext2/master/code/globalVars.js');
 }
 
