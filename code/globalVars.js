@@ -46,10 +46,10 @@ scratchext.install = function(name, descriptor, extension) {
 
 scratchext.log = function(string, color) {
     if(color===undefined)
-        color = 'white';
+        color = '#4A9EE2';
 
     // filter out MSU etc to only allow "debug" to be shown in js console
-    console.debug('%c[%cScratchExt%c] %c'+string, 'color: white;', 'color: #4A9EE2;', 'color: white;', 'color: '+color+';');
+    console.debug('%c[%cScratchExt%c] %c'+string, 'color: white;', 'color: #986fe6;', 'color: white;', 'color: '+color+';');
 }
 
 scratchext.addCSS = function(url) {
