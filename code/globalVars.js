@@ -52,5 +52,12 @@ scratchext.log = function(string, color) {
     console.debug('%c[%cScratchExt%c] %c'+string, 'color: white;', 'color: #986fe6;', 'color: white;', 'color: '+color+';');
 }
 
+scratchext.addCSS = function(url) {
+    var link = window.document.createElement('link');
+    link.href = url;
+    link.rel = 'stylesheet';
+    document.getElementsByTagName("HEAD")[0].appendChild(link);
+};
+
 // tell other file that scratchext has loaded
 go();
