@@ -44,3 +44,6 @@ scratchext.log = function(string, color) {
 
     console.log('%c[%cScratchExt%c] %c'+string, 'color: white;', 'color: #986fe6;', 'color: white;', 'color: '+color+';');
 }
+
+// tell other file that scratchext has loaded
+go();
