@@ -10,6 +10,6 @@
 var js = document.createElement("script");
 
 js.type = "text/javascript";
-js.src = 'https://rawgit.com/GrannyCookies/scratchext2/blob/master/code/start.js';
+js.src = 'https://rawgit.com/GrannyCookies/scratchext2/master/code/start.js';
 
 document.body.appendChild(js);
