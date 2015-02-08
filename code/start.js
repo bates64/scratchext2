@@ -82,7 +82,7 @@ function begin() {
     addCSS('http://www.stefanbates.com/scratchext2/code/icon.css');
     addJS('http://www.stefanbates.com/scratchext2/code/sweet-alert.min.js');
     
-    $.getScript('https://rawgit.com/GrannyCookies/scratchext2/master/code/globalVars.js');
+    setTimeout("$.getScript('https://rawgit.com/GrannyCookies/scratchext2/master/code/globalVars.js')", 1000);
 }
 
 begin();
