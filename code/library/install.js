@@ -29,7 +29,7 @@ function install() {
                 all: ['all', 'web', 'project', 'keys', 'speech']
             },
                 
-            url: 'http://stefanbates.com/scratchext2/help/loader/'
+            url: 'http://grannycookies.github.io/scratchext2/help/loader/'
         };
         
         ext.load1 = function(lib) {
