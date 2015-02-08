@@ -2,9 +2,11 @@
 
 if(!scratchext.isShared) {
   // project is unshared
-  scratchext.log('replacing share button VER 0.1');
+  scratchext.log('replacing share button');
   scratchext.addCSS(scratchext.root + 'css/share-btn.css');
   
   $('html').append('<div id="share-btn" class="editorOnly">Share</div>');
   $('#share-btn').on('click', JSshareProject);
+  
+  $('#share').on('click', JSshareProject);
 }
