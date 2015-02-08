@@ -83,7 +83,7 @@ function extKeys() {
                 keys: ['shift', 'ctrl', 'enter', 'backspace', 'alt', 'tab', 'caps', 'esc', 'any'],
             },
             
-            url: 'http://stefanbates.com/scratchext2/help/keys/'
+            url: scratchext.getWiki('keys')
         };
      
         last_h_value = false;
