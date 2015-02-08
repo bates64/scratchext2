@@ -73,5 +73,23 @@ function begin() {
     setTimeout("$.getScript('https://rawgit.com/GrannyCookies/scratchext2/master/code/globalVars.js')", 1000);
 }
 
-//$.getScript('https://rawgit.com/GrannyCookies/scratchext2/master/code/linkify.js');
-begin();
+function waitfor(test, expectedValue, msec, callback) {
+    while(test() !== expectedValue) {
+        setTimeout(function() {
+            waitfor(test, expectedValue, msec, callback);
+        }, msec);
+        return;
+    }
+    
+    callback();
+}
+
+function isScratchDefined() {
+    try {
+        return Scratch !== undefined && data !== undefined;
+    } catch(e) {
+        return false;
+    }
+}
+
+waitfor(isScratchDefined, true, 100, begin);
