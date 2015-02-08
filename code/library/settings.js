@@ -6,4 +6,5 @@ if(!scratchext.isShared) {
   scratchext.addCSS(scratchext.root + 'css/share-btn.css');
   
   $('html').append('<div id="share-btn" class="editorOnly">Share</div>');
+  $('#share-btn').on('click', JSshareProject);
 }
