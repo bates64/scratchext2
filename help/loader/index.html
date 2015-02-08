@@ -37,20 +37,31 @@
         <h3>Blocks</h3>
         
         <pre class="blocks big">
-        load libraries ::extension
+        load libraries from the [notes and credits v] ::extension
         </pre>
-        The "load libraries" block installs the libraries specified in the <b>notes & credits</b>.<br>
+        The "load libraries from the notes and credits" block installs the libraries specified in the <b>notes & credits</b>.<br>
         To specify a library to load, simply add this to your <b>notes & credits</b>:
         <a href="notesExample.png"><img src="notesExample.png"></a><br>
         You can have as many as you like, and they are case-insensitive.<br>
         Make sure you user a <b>semicolon</b> a the end of each install.<br>
         Here are the libraries you can use, as of now.<br>
         <pre class="blocks">
+        ScratchExt=[all]; ::extension // Install all libraries which are below
+        
         ScratchExt=[web]; ::motion //ScratchExt "Web" library
         ScratchExt=[keys]; ::operators //ScratchExt "Keys" library
+        ScratchExt=[project]; ::operators //ScratchExt "Project" library
+        ScratchExt=[speech]; ::operators //ScratchExt "Speech" library
         </pre>
         
         <hr>
+        
+        <pre class="blocks big">
+        load libraries from the [prepare blocks v] ::extension
+        </pre>
+        This loads the libaries specified by the prepare blocks.
+        <hr>
+        
         <pre class="blocks big">
         libraries loaded ::extension boolean
         </pre>
@@ -58,9 +69,9 @@
         
         <hr>
         <pre class="blocks big">
-        is scratchext loaded? ::extension boolean
+        scratchext is loaded ::extension boolean
         </pre>
-        The "is scratchext loaded?" block returns <i>true</i> all the time, except when ScratchExt has not been installed.
+        This block returns <i>true</i> all the time, except when ScratchExt has not been installed.
         
     </div>
 </body>
