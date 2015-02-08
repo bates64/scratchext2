@@ -26,7 +26,7 @@ function install() {
                 from: ['notes and credits', 'prepare blocks'],
                 
                 // every scratchext lib must go here
-                all: ['all', 'web', 'project', 'keys', 'speech']
+                all: ['all', 'web', 'project', 'keys', 'speech', 'ripple']
             },
                 
             url: scratchext.getWiki('loader')
