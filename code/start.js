@@ -12,7 +12,7 @@ function go() {
             
             // if the author of the project is you, load the settings library
             if(scratchext.author) {
-                $.getScript(scratchext.root + '/library/settings.js');
+                $.getScript(scratchext.root + '/settings.js');
             }
             
             swal({
