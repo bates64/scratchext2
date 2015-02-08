@@ -81,7 +81,7 @@ function installExtensionWeb() {
                 ['r', 'full browser version', 'versionlong'],
                 ['-'],
                 ['w', 'shout title %s description %s type %m.types', 'message', 'Hello!', 'ScratchExt is awesome!', 'success'],
-                ['R', 'ask title %s description %s yes %s no %s type %m.types', 'ask', 'Hey there!', 'Is ScratchExt awesome?', 'Of course!', 'No way.', 'success'],
+                //['R', 'ask title %s description %s yes %s no %s type %m.types', 'ask', 'Hey there!', 'Is ScratchExt awesome?', 'Of course!', 'No way.', 'success'],
             ],
 
             menus: {
