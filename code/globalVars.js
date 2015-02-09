@@ -60,7 +60,7 @@ scratchext.addCSS = function(url) {
 };
 
 // show/hide scratchext editor button if in editor or not
-scratchext.editShow = function() {
+scratchext.editShow = (function() {
     if(scratchext.editMode()) {
         $('.editorOnly').show();
         $('.playerOnly').hide();
@@ -70,9 +70,7 @@ scratchext.editShow = function() {
     }
     
     setTimeout(scratchext.editShow, 100);
-};
-
-setTimeout(scratchext.editShow, 100);
+})();
 
 // tell other file that scratchext has loaded
 go();

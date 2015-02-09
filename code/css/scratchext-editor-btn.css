@@ -1,2 +1,40 @@
 /* editor button css, by TGB */
-/* remember that :active won't work */
+#editorInstall-new {
+    position: absolute;
+    top: 153px;
+    left: 602px;
+    height: 19px;
+    padding: 0 17px 0 10px;
+
+    font-size: 12px;
+    text-shadow: none;
+    color: #919395;
+
+    background-color: #E6E8E8;
+    background-position: 0 -113px;
+
+    transition: 10ms all;
+    z-index: 999;
+}
+
+#editorInstall-new:hover {
+    cursor: default;
+
+    color: #FAAB40;
+
+    background-position: 0 -142px;
+}
+
+#editorInstall-new > div {
+	height: 19px;
+    width: 7px;
+
+    position: absolute;
+    left: 0;
+
+    background-color: #632D99;
+}
+
+#editorInstall-new > span {
+	margin-left: 1px;
+}
