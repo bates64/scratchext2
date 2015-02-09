@@ -53,10 +53,14 @@ function begin() {
         // stop below code
         throw new Error('User not logged in!');
     }
-
-    addCSS('http://www.stefanbates.com/scratchext2/code/sweet-alert.css');
+    
     addCSS('http://www.stefanbates.com/scratchext2/code/icon.css');
-    addJS('http://www.stefanbates.com/scratchext2/code/sweet-alert.min.js');
+    
+    // sweet prompt and sweet alert
+    addJS('https://cdn.rawgit.com/gabrielederosa/SweetPrompt/master/lib/sweet-alert.min.js');
+    addCSS('https://cdn.rawgit.com/gabrielederosa/SweetPrompt/master/lib/sweet-alert.css');
+    addJS('https://cdn.rawgit.com/gabrielederosa/SweetPrompt/master/lib/sweet-prompt.min.js');
+    addCSS('https://cdn.rawgit.com/gabrielederosa/SweetPrompt/master/lib/sweet-prompt.css');
     
     setTimeout("$.getScript('https://rawgit.com/GrannyCookies/scratchext2/master/code/globalVars.js')", 1000);
 }
@@ -94,4 +98,4 @@ function isScratchDefined() {
     }
 }
 
-waitfor(isScratchDefined, true, 100, begin);
+waitfor(isScratchDefined, true, 250, begin);
