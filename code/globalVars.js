@@ -6,8 +6,21 @@ var scratchext = {
     installed: [],
     isShared: Scratch.FlashApp.model.attributes.isPublished,
     id: Scratch.INIT_DATA.PROJECT.model.id,
-    root: 'https://rawgit.com/GrannyCookies/scratchext2/master/code/'
+    root: 'https://rawgit.com/GrannyCookies/scratchext2/master/code/',
+    scratchext.banner = {}
 };
+
+/*scratchext.banner.prompt = function(message, callback) {
+    options = {timeout : 0};
+    message += '<iframe class="iframeshim" frameborder="0" scrolling="no"><html><head></head><body></body></html></iframe>';
+    humane.el = $('div.humane')[0];
+
+    notification = humane.log(message, options);
+}
+
+scratchext.banner.clear = function() {
+    humane.hideMsg();
+}*/
 
 scratchext.getWiki = function(lib) {
     return 'http://grannycookies.github.io/scratchext2/help/' + lib + '/';
