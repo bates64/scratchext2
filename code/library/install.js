@@ -1,3 +1,21 @@
+function createRandomWord(length) {
+    var consonants = 'bcdfghjklmnpqrstvwxyz',
+        vowels = 'aeiou',
+        rand = function(limit) {
+            return Math.floor(Math.random()*limit);
+        },
+        i, word='', length = parseInt(length,10),
+        consonants = consonants.split(''),
+        vowels = vowels.split('');
+    for (i=0;i<length/2;i++) {
+        var randConsonant = consonants[rand(consonants.length)],
+            randVowel = vowels[rand(vowels.length)];
+        word += (i===0) ? randConsonant.toUpperCase() : randConsonant;
+        word += i*2<length-1 ? randVowel : '';
+    }
+    return word;
+}
+
 function install() {
     (function(ext) {
         ext._getStatus = function() {
@@ -15,11 +33,11 @@ function install() {
                 ['r', 'total libraries loaded', 'loaded'],
                 ['-'],
                 [' ', 'prepare library %m.all', 'load1', 'all'],
+                [' ', 'run custom script %s', 'unsafe', 'somefile.js'],
                 ['-'],
                 ['b', 'scratchext is ready', 'installed'],
-                ['-'],
-                ['B', 'TEMP: click to share project', 'share'],
-                [' ', 'TEMP: change project title to %s', 'title', Scratch.INIT_DATA.PROJECT.model.title]
+                //['B', 'TEMP: click to share project', 'share'],
+                //[' ', 'TEMP: change project title to %s', 'title', Scratch.INIT_DATA.PROJECT.model.title]
             ],
                 
             menus: {
@@ -31,6 +49,15 @@ function install() {
                 
             url: scratchext.getWiki('loader')
         };
+        
+        ext.unsafe = function(src) {
+            var key = createRandomWord(4);
+            sweetPrompt('Custom Script', 'Are you sure you want to install a custom script?\nType "' + key + '" below if so.', function(result) {
+                if(key===result) {
+                    $.getScript(src);
+                }
+                });
+        }
         
         ext.load1 = function(lib) {
             toLoad.push(lib.toLowerCase());
