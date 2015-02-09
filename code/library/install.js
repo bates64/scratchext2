@@ -102,10 +102,8 @@ function install() {
 var lights = 1;
 var comment = 'No libraries installed...';
 
-//$('.installscratchext').slideUp();
-
 setTimeout(function() {
-    $('.installscratchext').fadeOut(50, function(){$(this).remove()});
-}, 200);
+    $('.installscratchext').fadeOut(100, function(){$(this).remove()});
+}, 100);
 
 install();
