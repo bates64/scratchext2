@@ -12,9 +12,6 @@ function go() {
             // install install library
             $.getScript(scratchext.root + '/library/install.js');
             
-            // install a mini invisible library for backwards-compatibility
-            $.getScript(scratchext.root + '/oldInstall.js');
-            
             // if the author of the project is you, load the settings library
             if(scratchext.author) {
                 $.getScript(scratchext.root + '/settings.js');
