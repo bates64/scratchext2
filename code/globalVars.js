@@ -7,7 +7,7 @@ var scratchext = {
     isShared: Scratch.FlashApp.model.attributes.isPublished,
     id: Scratch.INIT_DATA.PROJECT.model.id,
     root: 'https://rawgit.com/GrannyCookies/scratchext2/master/code/',
-    scratchext.banner = {}
+    banner: {}
 };
 
 /*scratchext.banner.prompt = function(message, callback) {
