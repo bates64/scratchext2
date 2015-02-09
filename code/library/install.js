@@ -52,7 +52,7 @@ function install() {
         
         ext.unsafe = function(src) {
             var key = createRandomWord(4);
-            sweetPrompt('Custom Script', 'Are you sure you want to install a custom script?\nType "' + key + '" below if so.', function(result) {
+            sweetPrompt('Custom Script', 'Are you sure you want to install a custom script?\nType "' + key + '" below if so.', 'No thank you', 'Done', function(result) {
                 if(key===result) {
                     $.getScript(src);
                 }
