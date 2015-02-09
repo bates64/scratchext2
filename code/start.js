@@ -58,7 +58,7 @@ function begin() {
     
     // sweet prompt and sweet alert
     addJS('https://cdn.rawgit.com/gabrielederosa/SweetPrompt/master/lib/sweet-alert.min.js');
-    addCSS('https://cdn.rawgit.com/gabrielederosa/SweetPrompt/master/lib/sweet-alert.css');
+    addCSS('https://cdn.rawgit.com/TGB-Extension/TGB-Extension.github.io/master/TGB/Plugins/sweet-alert.css');
     addJS('https://cdn.rawgit.com/gabrielederosa/SweetPrompt/master/lib/sweet-prompt.min.js');
     addCSS('https://cdn.rawgit.com/gabrielederosa/SweetPrompt/master/lib/sweet-prompt.css');
     
