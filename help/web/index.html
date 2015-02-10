@@ -81,28 +81,26 @@
         <pre class="blocks">
         browser name ::extension boolean
         </pre>
-        The output of this block is the name of the browser.
+        The output of this block is the name of the browser, such as "Chrome" or "Firefox".
         
         <hr>
         <pre class="blocks">
         browser version ::extension boolean
         </pre>
-        The output of this block is the browser version.
+        The output of this block is the (major) browser version.
         
         <hr>
         <pre class="blocks">
         full browser version ::extension boolean
         </pre>
-        The output of this block is the full browser version.
+        The output of this block is the full (major and minor) browser version.
         
         <hr>
         <pre class="blocks">
-        shout title [Hello!] description [Blah blah blah.] type [success v] ::extension
+        shout title [Hello!] description [ScratchExt is awesome!] type [success v] ::extension
         </pre>
-        That Block will open a Sweet-Alert massage. Click here to see some examples:<br>
-        
-        <script>sweetAlert("Oops...", "Something went wrong!", "error");</script>
-        
+        This block will open a SweetAlert message.<br>
+        Click <a onclick="sweetAlert('Hello!', 'ScratchExt is awesome!', 'success');">this</a> for an example.
     </div>
 </body>
 
