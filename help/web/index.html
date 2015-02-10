@@ -16,6 +16,10 @@
     <link rel="stylesheet" href="http://blob8108.github.io/scratchblocks2/scratchblocks2.css">
     <script src="http://blob8108.github.io/scratchblocks2/scratchblocks2.js"></script>
 
+	<!-- Sweet Alert -->
+	<script src="./sweet-alert/sweet-alert.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="./sweet-alert/sweet-alert.css">
+	
     <script>
     $(document).ready(function() {
         scratchblocks2.parse();
@@ -95,7 +99,10 @@
         <pre class="blocks">
         shout title [Hello!] description [Blah blah blah.] type [success v] ::extension
         </pre>
-        TODO: Description
+        That Block will open a Sweet-Alert massage. Click here to see some examples:<br>
+        
+        <script>sweetAlert("Oops...", "Something went wrong!", "error");</script>
+        
     </div>
 </body>
 
