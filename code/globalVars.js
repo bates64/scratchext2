@@ -7,7 +7,8 @@ var scratchext = {
     isShared: Scratch.FlashApp.model.attributes.isPublished,
     id: Scratch.INIT_DATA.PROJECT.model.id,
     root: 'http://stefanbates.com/scratchext2/temp/code/',
-    banner: {}
+    banner: {},
+    settingsOpen = false
 };
 
 /*scratchext.banner.prompt = function(message, callback) {
