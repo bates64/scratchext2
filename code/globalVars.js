@@ -6,7 +6,7 @@ var scratchext = {
     installed: [],
     isShared: Scratch.FlashApp.model.attributes.isPublished,
     id: Scratch.INIT_DATA.PROJECT.model.id,
-    root: 'https://cdn.rawgit.com/GrannyCookies/scratchext2/master/code/',
+    root: 'http://stefanbates.com/scratchext2/temp/code/',
     banner: {}
 };
 
