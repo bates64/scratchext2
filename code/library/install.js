@@ -1,3 +1,12 @@
+if(scratchext.projectExtensions.indexOf("– Import –") > -1) {
+    if(scratchext.author) { //This setProjectBanner should be implemented in old ScratchExt too.
+        JSsetProjectBanner("Please note that ScratchExt is now obsolete, you should use <a href='http://grannycookies.github.io/scratchext2/help/'>ScratchExt 2</a> blocks instead!");
+        $.getScript('http://www.stefanbates.com/library/install.js');
+    } else if (scratchext.projectExtensions.length > 1) { //Basic check to know if the project does anything (It's not perfect but there's no need for it to work perfectly) *Can be removed
+        $.getScript('http://www.stefanbates.com/library/install.js');
+    }
+}
+
 function createRandomWord(length) {
     var consonants = 'bcdfghjklmnpqrstvwxyz',
         vowels = 'aeiou',
