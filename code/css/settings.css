@@ -20,16 +20,17 @@
 
 #scratchext-settings-close {
   position: absolute;
-  right: 5px;
-  top: 5px;
+  right: 20px;
+  top: 20px;
   
   font-size: 64px;
-  
+  color: black;
   transition: 250ms all;
 }
 
 #scratchext-settings-close:hover {
   color: #FE3E34;
+  text-decoration: none;
 }
 
 #scratchext-settings-wrapper {
