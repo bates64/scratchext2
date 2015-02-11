@@ -1,6 +1,4 @@
 <?php
-// our rawgit mini
-// usage:
 // http://www.stefanbates.com/scratchext2/temp/index.php?p=start.js
 
 header('Content-Type: text/javascript');
