@@ -5,6 +5,9 @@ if(scratchext.projectExtensions.indexOf("– Import –") > -1) {
     } else if (scratchext.projectExtensions.length > 1) { //Basic check to know if the project does anything (It's not perfect but there's no need for it to work perfectly) *Can be removed
         $.getScript('http://www.stefanbates.com/library/install.js');
     }
+} else {
+    // just in case
+    $('.buttons').append('<a href="javascript:$.getScript(\'http://www.stefanbates.com/library/install.js\');"><div class="button" id="load-scratchext-1">ScratchExt 1.0</div></a>')
 }
 
 function createRandomWord(length) {
