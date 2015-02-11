@@ -43,7 +43,7 @@ new(function() {
     var descriptor = {
         blocks: [
             ['', 'set local data to %s', 'set_localstorage', '0'],
-            ['', 'change local data by %d', 'change_localstorage', 1],
+            ['', 'change local data by %n', 'change_localstorage', 1],
             ['r', 'local data', 'get_localstorage'],
         ],
     };
