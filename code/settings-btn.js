@@ -12,7 +12,7 @@ $('#scratchext-settings').on('click', function() {
   
   addCSS(scratchext.root+'/css/settings.css');
   $('body').append('<div id="scratchext-settings-overlay"></div>').fadeIn();
-  $('body').append('<div id="scratchext-settings-pane"></div>');
+  $('body').append('<div id="scratchext-settings-pane"><div id="scratchext-settings-wrapper"></div></div>');
   
-  $('#scratchext-settings-pane').append('<h1>ScratchExt 2.0 Settings</h1>');
+  $('#scratchext-settings-wrapper').append('<h1>ScratchExt 2.0 Settings</h1>');
 });
