@@ -3,5 +3,8 @@ $('.logout').before('<li><a id="scratchext-settings" href="javascript:void;">Scr
 
 // when said button is clicked load some swag
 $('#scratchext-settings').on('click', function() {
-  scratchext.log('Settings swag');
+  scratchext.log('Settings opened');
+  
+  addCSS(scratchext.root+'/css/settings.css');
+  $('body').append('<div id="scratchext-settings-pane"></div>').fadeIn;
 });
