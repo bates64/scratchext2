@@ -96,7 +96,7 @@ function addJS(url) {
 
 function isScratchDefined() {
     try {
-        return Scratch !== undefined && data !== undefined;
+        return Scratch.FlashApp.model !== undefined && data !== undefined;
     } catch(e) {
         return false;
     }
