@@ -11,7 +11,7 @@ $('#scratchext-settings').on('click', function() {
   scratchext.log('Settings opened');
   
   addCSS(scratchext.root+'/css/settings.css');
-  $('body').append('<div id="scratchext-settings-overlay"></div>').fadeIn();
+  $('body').append('<div id="scratchext-settings-overlay"></div>').hide().fadeIn(300);
   $('body').append('<div id="scratchext-settings-pane"><div id="scratchext-settings-wrapper"></div></div>');
   
   $('#scratchext-settings-wrapper').append('<a href="javascript:void(0)" id="scratchext-settings-close">x</a>');
