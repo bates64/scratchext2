@@ -1,4 +1,8 @@
 #scratchext-settings-pane {
+  -webkit-animation: showSweetAlert 0.3s;
+  -moz-animation: showSweetAlert 0.3s;
+  animation: showSweetAlert 0.3s;
+  
   width: 900px;
   height: 600px;
   
@@ -7,4 +11,19 @@
   margin-left: -450px;
   top: 50%;
   margin-top: -300px;
+  
+  background-color: white;
+  z-index: 99999;
+  text-shadow: 0 !important;
+  border-radius: 5px;
+}
+
+#scratchext-settings-overlay {
+  z-index: 99998;
+  background-color: rgba(0, 0, 0, 0.4);
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
 }
