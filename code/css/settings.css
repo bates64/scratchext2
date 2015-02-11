@@ -18,6 +18,13 @@
   border-radius: 5px;
 }
 
+#scratchext-settings-wrapper {
+  width: inherit;
+  height: inherit;
+  
+  padding: 10px;
+}
+
 #scratchext-settings-overlay {
   z-index: 99998;
   background-color: rgba(0, 0, 0, 0.4);
