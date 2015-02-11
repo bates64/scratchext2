@@ -1,5 +1,5 @@
 // add a button to the account menu
-$('.logout').before('<li><a id="scratchext-settings" href="javascript:void">ScratchExt Settings</a></li>');
+$('.logout').before('<li><a id="scratchext-settings" href="javascript:void(0)">ScratchExt Settings</a></li>');
 
 // when said button is clicked load some swag
 $('#scratchext-settings').on('click', function() {
