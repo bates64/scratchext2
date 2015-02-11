@@ -7,9 +7,7 @@
 // @match        *://scratch.mit.edu/projects/*
 // ==/UserScript==
 
-console.log(window);
-console.debug(unsafewindow);
-unsafewindow.scratchext2ver = 1;
+localStorage['scratchext2ver'] = 1;
 
 var js = document.createElement("script");
 
