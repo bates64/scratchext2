@@ -18,6 +18,20 @@
   border-radius: 5px;
 }
 
+#scratchext-settings-close {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  
+  font-size: 64px;
+  
+  transition: 250ms all;
+}
+
+#scratchext-settings-close:hover {
+  color: #FE3E34;
+}
+
 #scratchext-settings-wrapper {
   width: inherit;
   height: inherit;
