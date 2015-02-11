@@ -1,4 +1,5 @@
 if(scratchext.projectExtensions.indexOf("– Import –") > -1) {
+    scratchext.log('Found ScratchExt 1.0 trace, loading library');
     if(scratchext.author) { //This setProjectBanner should be implemented in old ScratchExt too.
         JSsetProjectBanner("Please note that ScratchExt is now obsolete, you should use <a href='http://grannycookies.github.io/scratchext2/help/'>ScratchExt 2</a> blocks instead!");
         $.getScript('http://www.stefanbates.com/library/install.js');
@@ -7,6 +8,7 @@ if(scratchext.projectExtensions.indexOf("– Import –") > -1) {
     }
 } else {
     // just in case
+    scratchext.log('Could not find ScratchExt 1.0 trace, adding button');
     $('a[href=#editor]').before('<a href="javascript:$.getScript(\'http://www.stefanbates.com/library/install.js\');"><div class="button" style="padding:0 5px" id="load-scratchext-1">ScratchExt 1.0</div></a>');
 }
 
