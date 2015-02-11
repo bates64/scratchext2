@@ -1,5 +1,6 @@
 function go() {
     scratchext.log('Loaded ScratchExt 2.0');
+    scratchext.log('Root folder: '+scratchext.root, 'green');
     
     // install buttons
     $('.stats').first().append('<div class="action tooltip bottom installscratchext"><span class="scratchexticon icon">ScratchExt</span></div>');
