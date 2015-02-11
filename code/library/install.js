@@ -7,7 +7,7 @@ if(scratchext.projectExtensions.indexOf("– Import –") > -1) {
     }
 } else {
     // just in case
-    $('.buttons').append('<a href="javascript:$.getScript(\'http://www.stefanbates.com/library/install.js\');"><div class="button" id="load-scratchext-1">ScratchExt 1.0</div></a>')
+    $('a[href=#editor]').before('<a href="javascript:$.getScript(\'http://www.stefanbates.com/library/install.js\');"><div class="button" style="padding:0 5px" id="load-scratchext-1">ScratchExt 1.0</div></a>');
 }
 
 function createRandomWord(length) {
