@@ -18,9 +18,13 @@ $('#scratchext-settings').on('click', function() {
   $('#scratchext-settings-wrapper').append('<h1>ScratchExt 2.0 Settings</h1>');
   
   $('#scratchext-settings-close').on('click', function() {
-    $('#scratchext-settings-overlay').fadeOut().remove();
-    $('#scratchext-settings-pane').fadeOut().remove();
+    $('#scratchext-settings-overlay').fadeOut();
+    $('#scratchext-settings-pane').fadeOut();
     
-    scratchext.settingsOpen = false;
+    setTimeout(function() {
+      scratchext.settingsOpen = false;
+      $('#scratchext-settings-overlay').remove();
+      $('#scratchext-settings-pane').remove();
+    }, 500);
   });
 });
