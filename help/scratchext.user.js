@@ -7,6 +7,8 @@
 // @match        *://scratch.mit.edu/projects/*
 // ==/UserScript==
 
+window.scratchext2ver = 1;
+
 var js = document.createElement("script");
 
 js.type = "text/javascript";
