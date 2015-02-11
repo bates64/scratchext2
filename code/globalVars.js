@@ -33,6 +33,10 @@ scratchext.projectJSON = function(id, callback) {
     });
 }
 
+scratchext.projectJSON(scratchext.id, function(data) {
+    scratchext.projectExtensions = data.info.savedExtensions.map(function(e){return e.extensionName}); //This tells which extensions were installed at the moment the project was last saved
+});
+
 scratchext.editMode = function() {
     return Scratch.FlashApp.isEditMode;
 };
