@@ -1,6 +1,10 @@
 #scratchext-settings-pane {
+  width: 900px;
+  height: 600px;
+  
   position: fixed;
-  margin:0px auto;
-  width: 500px;
-  height: 500px;
+  left: 50%;
+  margin-left: -450px;
+  right: 50%;
+  margin-right: -300px;
 }
