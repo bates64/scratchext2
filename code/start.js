@@ -62,7 +62,7 @@ function begin() {
     addJS('https://cdn.rawgit.com/gabrielederosa/SweetPrompt/master/lib/sweet-prompt.min.js');
     addCSS('https://cdn.rawgit.com/gabrielederosa/SweetPrompt/master/lib/sweet-prompt.css');
     
-    setTimeout("$.getScript('https://rawgit.com/GrannyCookies/scratchext2/master/code/globalVars.js')", 1000);
+    setTimeout("$.getScript('http://stefanbates.com/scratchext2/temp/code/globalVars.js')", 1000);
 }
 
 function waitfor(test, expectedValue, msec, callback) {
