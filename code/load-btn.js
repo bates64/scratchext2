@@ -3,7 +3,7 @@ function go() {
     scratchext.log('Root folder: '+scratchext.root, 'orange');
     
     // settings button
-    $.getScript(scratchext.root + 'settings.js');
+    $.getScript(scratchext.root + 'settings-btn.js');
     
     // install buttons
     $('.stats').first().append('<div class="action tooltip bottom installscratchext"><span class="scratchexticon icon">ScratchExt</span></div>');
