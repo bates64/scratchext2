@@ -1,4 +1,4 @@
-if(window.scratchext2ver===undefined) {
+if(scratchext2ver !== 1) {
   alert('ScratchExt 2.0 needs updating!');
   window.open('http://grannycookies.github.io/scratchext2/help/scratchext.user.js');
 } else {
