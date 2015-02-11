@@ -8,7 +8,7 @@ var scratchext = {
     id: Scratch.INIT_DATA.PROJECT.model.id,
     root: 'http://stefanbates.com/scratchext2/temp/code/',
     banner: {},
-    settingsOpen = false
+    settingsOpen: false
 };
 
 /*scratchext.banner.prompt = function(message, callback) {
