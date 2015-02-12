@@ -4,6 +4,7 @@
 header("Access-Control-Allow-Origin: *");
 
 $url = $_GET['p'];
+echo 'IN DEVELOPMENT';
 
 // set MIME type based on extension
 $parts=explode(".", $_POST[$url]);
