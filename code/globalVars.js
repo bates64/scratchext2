@@ -6,7 +6,12 @@ var scratchext = {
     installed: [],
     isShared: Scratch.FlashApp.model.attributes.isPublished,
     id: Scratch.INIT_DATA.PROJECT.model.id,
-    root: 'http://scratchextproxy.x10.mx/?p=',
+    root: 'http://scratchextproxy.x10.mx/?mime=text/javascript&p=',
+    
+    // MIME types
+    js_root: 'http://scratchextproxy.x10.mx/?mime=text/javascript&p=',
+    css_root: 'http://scratchextproxy.x10.mx/?mime=text/css&p=',
+    
     banner: {},
     settingsOpen: false
 };
