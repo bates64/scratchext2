@@ -1,2 +1,2 @@
-$.getScript(scratchext.js_root + 'datanarrative.js');
+$.getScript('datanarrative.js');
 scratchext.log('DataNarrative', 'green');
