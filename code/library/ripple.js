@@ -16,12 +16,12 @@
     ext.wA = function(query, callback) {
         var realquery = query.replace(" ", "+");
           window.open('http://www.wolframalpha.com/input/?i=' + realquery, '_blank').focus(); 
-      callback();        
+      callback(); //TODO: Wait until this window becomes the top window again before using callback()
     };
     ext.sW = function(query, callback) {
         var realquery = query.replace(" ", "_");
           window.open('http://wiki.scratch.mit.edu/wiki/' + realquery, '_blank').focus(); 
-      callback();        
+      callback(); //TODO: Wait until this window becomes the top window again before using callback()
     };
     ext.check = function() {
         return true;
@@ -32,15 +32,14 @@
     ext.split = function(str, callback) {
         callback(str.split(""));
     }; 
-    ext.notify = function(str, callback) {
+    ext.notify = function(str) {
         return ScratchExtensions.notify(str);
-      callback();        
     };
 var descriptor = {
         blocks: [
             ['w', 'Look up %s on Wolfram|Alpha', 'wA', 'a letter'],
             ['w', 'Look up %s on Scratch Wiki', 'sW', 'stuff'],
-            ['w', 'Put up banner %s', 'notify', 'Hello'],
+            [' ', 'Put up banner %s', 'notify', 'Hello'],
             ['-'],
 	        ['b', '@greenFlag Ripple Installed?', 'check'],
             ['-'],
