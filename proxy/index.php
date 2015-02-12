@@ -1,18 +1,11 @@
 <?php
-//http://scratchextproxy.x10.mx/?p=start.js
+//http://scratchextproxy.x10.mx/?p=start.js&mime=text/javascript
 header("Access-Control-Allow-Origin: *");
 
-echo '<h1>IN DEVELOPMENT</h1>';
 $url = 'https://raw.githubusercontent.com/GrannyCookies/scratchext2/master/code/' . $_GET['p'];
+$mime_type = $_GET['mime'];
 
-// mime content detector
-$finfo = finfo_open($url);
-$mime_type = finfo_file($finfo, $filename);
-finfo_close($finfo);
+header('Content-Type: ' . $mime_type);
 
-// set MIME type based on extension
-echo $mime_type;
-header('Content-Type: text/html');
-
-echo file_get_contents('<br>' . $url);
+echo file_get_contents($url);
 ?>
