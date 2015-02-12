@@ -47,7 +47,7 @@ function install() {
                 ['r', 'total scratchext2 libraries loaded', 'loaded'],
                 ['-'],
                 [' ', 'prepare library %m.all', 'load1', 'web'],
-                [' ', 'prepare custom library %m.custom', 'load1', 'ripple'],
+                [' ', 'prepare custom library %m.custom', 'custom', 'ripple'],
                 //[' ', 'run custom script %s', 'unsafe', 'somefile.js'],
                 ['-'],
                 ['b', 'scratchext ready?', 'installed'],
@@ -67,6 +67,10 @@ function install() {
                 
             url: scratchext.getWiki('loader')
         };
+        
+        ext.custom = function(lib) {
+            ext.load1(lib);
+        }
         
         ext.unsafe = function(src) {
             var key = createRandomWord(4);
