@@ -32,4 +32,4 @@ scratchext.font = function () {
     };
 };
 
-scratchext.font.setup();
+scratchext.font().setup();
