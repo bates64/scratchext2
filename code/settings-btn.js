@@ -20,10 +20,10 @@ $('#scratchext-settings').on('click', function() {
   $('#scratchext-settings-wrapper').append('<h1>ScratchExt 2.0 Settings</h1>');
   
   // actual settings
-  $('#scratchext-settings-wrapper').append('<br><input type="checkbox" name="test">test</input>');
+  $('#scratchext-settings-wrapper').append('<br><input type="checkbox" name="test" value="1">test</input>');
 
   // save button
-  $('#scratchext-settings-wrapper').append('<br><a href="javascript:scratchext.settings.save();" id="scratchext-settings-save">Save</a>')
+  $('#scratchext-settings-wrapper').append('<br><h3><a href="javascript:scratchext.settings.save();" id="scratchext-settings-save">Save</a></h3>')
 
   $('#scratchext-settings-close').on('click', function() {
     if(scratchext.settings.currentData() !== scratchext.settings.savedData()) {
