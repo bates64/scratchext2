@@ -30,6 +30,6 @@ scratchext.font = function () {
             return ($('#fonttest').width() != notInstalledWidth);
         }
     };
-})();
+};
 
 scratchext.font.setup();
