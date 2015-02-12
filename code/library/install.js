@@ -116,7 +116,7 @@ function install() {
             scratchext.log('Loading libaries:\n'+toLoad, 'red');
             var i = 0;
             while(i<toLoad.length) {
-                $.getScript('https://rawgit.com/grannycookies/scratchext2/master/code/library/'+toLoad[i]+'.js').fail(function() {
+                $.getScript(scratchext.js_root+toLoad[i]+'.js').fail(function() {
                     lights = 3;
                     comment = 'Could not load a library.';
                     swal({
