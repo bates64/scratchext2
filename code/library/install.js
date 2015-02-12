@@ -116,9 +116,9 @@ function install() {
             scratchext.log('Loading libaries:', 'cyan');
             var i = 0;
             while(i<toLoad.length) {
-                var toInstall = scratchext.js_root+toLoad[i]+'.js';
+                var toInstall = toLoad[i]+'.js';
                 scratchext.log(toInstall, 'cyan');
-                $.getScript(toInstall);
+                $.getScript(scratchext.js_root+'library/'+toInstall);
                 i++;
             }
             
