@@ -21,6 +21,8 @@ $('#scratchext-settings').on('click', function() {
   
   // actual settings
   $('#scratchext-settings-wrapper').append('<br><input type="checkbox" name="test">test</input>');
+  
+  scratchext.settings.load();
 
   // save button
   $('#scratchext-settings-wrapper').append('<br><h3><a href="javascript:scratchext.settings.save();" id="scratchext-settings-save">Save</a></h3>')
@@ -42,6 +44,11 @@ $('#scratchext-settings').on('click', function() {
     }
   });
 });
+
+scratchext.settings.load = function() {
+  var to = JSON.parse(scratchext.settings.savedData);
+  // todo
+}
 
 scratchext.settings.isChecked = function(name) {
   var x = $('input[name=' + name + ']').attr('checked');
