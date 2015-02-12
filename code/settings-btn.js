@@ -48,14 +48,14 @@ $('#scratchext-settings').on('click', function() {
 scratchext.settings.load = function() {
   var to = JSON.parse(scratchext.settings.savedData);
   // todo
-}
+};
 
 scratchext.settings.isChecked = function(name) {
   var x = $('input[name=' + name + ']').attr('checked');
   if(x==='checked')
     return true;
   return false;
-}
+};
 
 scratchext.settings.currentData = function() {
   var settings = [];
