@@ -34,7 +34,11 @@ scratchext.projectJSON = function(id, callback) {
 }
 
 scratchext.projectJSON(scratchext.id, function(data) {
-    scratchext.projectExtensions = data.info.savedExtensions.map(function(e){return e.extensionName}); //This tells which extensions were installed at the moment the project was last saved
+    try {
+        scratchext.projectExtensions = data.info.savedExtensions.map(function(e){return e.extensionName}); //This tells which extensions were installed at the moment the project was last saved
+    } catch(e) {
+        scratchext.projectExtensions = []; //In case the project doesn't use any extensions.
+    }
 });
 
 scratchext.editMode = function() {
