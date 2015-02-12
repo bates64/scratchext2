@@ -9,7 +9,7 @@ header('Content-Type: ' . $mime_type);
 $url = 'https://raw.githubusercontent.com/GrannyCookies/scratchext2/master/code/' . $_GET['p'];
 
 // special cases
-if ($url == 'datanarrative') {
+if $_GET['special'] == 'datanarrative') {
   $url = 'https://raw.githubusercontent.com/MrSherlockHolmes/NarrativeC/master/DataNarrative.js';
 }
 
