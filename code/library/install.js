@@ -113,19 +113,12 @@ function install() {
             }
             
             // actually load
-            scratchext.log('Loading libaries:\n'+toLoad, 'red');
+            scratchext.log('Loading libaries:', 'cyan');
             var i = 0;
             while(i<toLoad.length) {
-                $.getScript(scratchext.js_root+toLoad[i]+'.js').fail(function() {
-                    lights = 3;
-                    comment = 'Could not load a library.';
-                    swal({
-                        title: "Whoa!",
-                        text: "Something went wrong while trying to load a library!",
-                        type: "error",
-                        confirmButtonText: 'Okay'
-                    });
-                });
+                var toInstall = scratchext.js_root+toLoad[i]+'.js';
+                scratchext.log(toInstall, 'cyan');
+                $.getScript(toInstall);
                 i++;
             }
             
