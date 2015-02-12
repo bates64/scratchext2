@@ -69,7 +69,7 @@ function install() {
         };
         
         ext.custom = function(lib) {
-            ext.load1(lib);
+            toLoad.push(lib.toLowerCase());
         }
         
         ext.unsafe = function(src) {
