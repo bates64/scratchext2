@@ -43,10 +43,17 @@ $('#scratchext-settings').on('click', function() {
   });
 });
 
+scratchext.settings.isChecked = function(name) {
+  var x = $('input[name=' + name + ']').attr('checked');
+  if(x==='checked')
+    return true;
+  return false;
+}
+
 scratchext.settings.currentData = function() {
   var settings = [];
   
-  settings.push( $('input[name=test]').val() );
+  settings.push(scratchext.settings.isChecked('test'));
   
   return JSON.stringify(settings);
 };
