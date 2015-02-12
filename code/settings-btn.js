@@ -1,3 +1,5 @@
+scratchext.settings = {};
+
 // add a button to the account menu
 $('.logout').before('<li><a id="scratchext-settings" href="javascript:void(0)">ScratchExt Settings</a></li>');
 
@@ -17,15 +19,54 @@ $('#scratchext-settings').on('click', function() {
   $('#scratchext-settings-wrapper').append('<a href="javascript:void(0)" id="scratchext-settings-close">x</a>');
   $('#scratchext-settings-wrapper').append('<h1>ScratchExt 2.0 Settings</h1>');
   
+  // actual settings
+  $('#scratchext-settings-wrapper').append('<input type="checkbox" name="test">test</input>');
+
+  // save button
+  $('#scratchext-settings-wrapper').append('<a href="javascript:scratchext.settings.save();" id="scratchext-settings-save">Save</a>')
+
   $('#scratchext-settings-close').on('click', function() {
-    $('#scratchext-settings-overlay').fadeOut(300);
-    $('#scratchext-settings-pane').fadeOut(300);
-    
-    setTimeout(function() {
-      scratchext.log('Settings: closed');
-      scratchext.settingsOpen = false;
-      $('#scratchext-settings-overlay').remove();
-      $('#scratchext-settings-pane').remove();
-    }, 300);
+    if(scratchext.settings.currentData() !== scratchext.settings.savedData()) {
+      swal({
+        title: "Are you sure?",
+        text: "You have unsaved settings.",
+        type: "warning",
+        showCancelButton: true;
+        confirmButtonText: "Discard changes",
+        cancelButtonText: "Cancel",
+      }, function() {
+        scratchext.settings.close();
+      });
+    } else {
+      scratchext.settings.close();
+    }
   });
 });
+
+scratchext.settings.currentData = function() {
+  var settings = [];
+  
+  settings.push( $('input[name=test]').val() );
+  
+  return JSON.stringify(settings);
+};
+
+scratchext.settings.savedData = function() {
+  return localStorage["scratchext-settings"];
+};
+
+scratchext.settings.save = function() {
+  localStorage["scratchext-settings"] = scratchext.settings.currentData();
+};
+
+scratchext.settings.close = function() {
+  $('#scratchext-settings-overlay').fadeOut(300);
+  $('#scratchext-settings-pane').fadeOut(300);
+    
+  setTimeout(function() {
+    scratchext.log('Settings: closed');
+    scratchext.settingsOpen = false;
+    $('#scratchext-settings-overlay').remove();
+    $('#scratchext-settings-pane').remove();
+  }, 300);
+};
