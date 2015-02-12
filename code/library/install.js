@@ -43,13 +43,14 @@ function install() {
             
         var desc = {
             blocks: [
-                [' ', 'load libraries from the %m.from', 'load', 'notes and credits'],
-                ['r', 'total libraries loaded', 'loaded'],
+                [' ', 'load libraries from the %m.from', 'load', 'prepare blocks'],
+                ['r', 'total scratchext2 libraries loaded', 'loaded'],
                 ['-'],
-                [' ', 'prepare library %m.all', 'load1', 'all'],
-                [' ', 'run custom script %s', 'unsafe', 'somefile.js'],
+                [' ', 'prepare library %m.all', 'load1', 'web'],
+                [' ', 'prepare custom library %m.custom', 'load1', 'ripple'],
+                //[' ', 'run custom script %s', 'unsafe', 'somefile.js'],
                 ['-'],
-                ['b', 'scratchext is ready', 'installed'],
+                ['b', 'scratchext ready?', 'installed'],
                 //['B', 'TEMP: click to share project', 'share'],
                 //[' ', 'TEMP: change project title to %s', 'title', Scratch.INIT_DATA.PROJECT.model.title]
             ],
@@ -58,7 +59,10 @@ function install() {
                 from: ['notes and credits', 'prepare blocks'],
                 
                 // every scratchext lib must go here
-                all: ['all', 'web', 'project', 'keys', 'speech', 'ripple', 'datanarrative']
+                all: ['web', 'project', 'keys', 'speech'],
+                
+                // every custom lib must go here
+                custom: ['ripple', 'datanarrative']
             },
                 
             url: scratchext.getWiki('loader')
