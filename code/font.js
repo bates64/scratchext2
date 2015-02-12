@@ -2,7 +2,6 @@ scratchext.font = function () {
     var test_string = 'mmmmmmmmmwwwwwww';
     var test_font = '"Comic Sans MS"';
     var notInstalledWidth = 0;
-    var testbed = null;
     var guid = 0;
     
     return {
@@ -14,7 +13,6 @@ scratchext.font = function () {
             
             
             $('body').append('<div id="fontTestBed"></div>').append('<span id="fontInstalledTest" class="fonttest">' + test_string + '</span>');
-            testbed = $('#fontTestBed');
             notInstalledWidth = $('#fontInstalledTest').width();
         },
         
@@ -24,8 +22,8 @@ scratchext.font = function () {
             var style = '<' + 'style id="fonttestStyle"> #fonttest' + guid + ' { font-size: 50px!important; font-family: ' + font + ', ' + test_font + '; } <' + '/style>';
             
             $('head').find('#fonttestStyle').remove().end().append(style);
-            testbed.html(' ');
-            testbed.append('<span id="fonttest' + guid + '" class="fonttest">' + test_string + '</span>');
+            $('#fontTestBed').html(' ');
+            $('#fontTestBed').append('<span id="fonttest' + guid + '" class="fonttest">' + test_string + '</span>');
                         
             return ($('#fonttest').width() != notInstalledWidth);
         }
