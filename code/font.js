@@ -1,4 +1,4 @@
-var font = (function () {
+scratchext.font = (function () {
     var test_string = 'mmmmmmmmmwwwwwww';
     var test_font = '"Comic Sans MS"';
     var notInstalledWidth = 0;
