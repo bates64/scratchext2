@@ -3,7 +3,11 @@
 header("Access-Control-Allow-Origin: *");
 
 $mime_type = $_GET['mime'];
-header('Content-Type: ' . $mime_type);
+if($mime_type != '') {
+  header('Content-Type: ' . $mime_type);
+} else {
+  header('Content-Type: text/javascript');
+}
 
 // default case
 $url = 'https://raw.githubusercontent.com/GrannyCookies/scratchext2/master/code/' . $_GET['p'];
