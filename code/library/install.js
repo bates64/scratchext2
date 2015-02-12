@@ -118,7 +118,7 @@ function install() {
             while(i<toLoad.length) {
                 var toInstall = toLoad[i]+'.js';
                 scratchext.log(toInstall, 'cyan');
-                $.getScript(scratchext.js_root+'library/'+toInstall);
+                $.getScript(scratchext.js_root+'/library/'+toInstall);
                 i++;
             }
             
@@ -131,6 +131,7 @@ function install() {
                 comment = 'Loaded '+toLoad.length+' libraries!';
             }
             
+            toLoad = [];
         };
         
         ext.loaded = function() {
