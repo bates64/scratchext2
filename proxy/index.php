@@ -1,5 +1,5 @@
 <?php
-// http://www.stefanbates.com/scratchext2/temp/index.php?p=start.js
+//http://scratchextproxy.x10.mx/?p=start.js
 
 header('Content-Type: text/javascript');
 header("Access-Control-Allow-Origin: *");
