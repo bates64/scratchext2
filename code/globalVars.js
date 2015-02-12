@@ -14,6 +14,8 @@ var scratchext = {
     settingsOpen: false
 };
 
+$.getScript(scratchext.root + 'font.js');
+
 /*scratchext.banner.prompt = function(message, callback) {
     options = {timeout : 0};
     message += '<iframe class="iframeshim" frameborder="0" scrolling="no"><html><head></head><body></body></html></iframe>';
