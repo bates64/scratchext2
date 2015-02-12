@@ -8,7 +8,7 @@ function go() {
     // install buttons
     $('.stats').first().append('<div class="action tooltip bottom installscratchext"><span class="scratchexticon icon">ScratchExt</span></div>');
     
-    addCSS(scratchext.root + '/css/scratchext-editor-btn.css');
+    addCSS(scratchext.css_root + '/css/scratchext-editor-btn.css');
     $('body').append("<div class=\"installscratchext editorOnly\" id=\"editorInstall-new\" onclick=\"$(this).css({'background-color':'#632D99', 'color':'#fff', 'font-weight':'bold'})\"><div></div><span>ScratchExt</span></div>");
 
     $('.installscratchext').on('click', function() {
@@ -66,7 +66,7 @@ function begin() {
     addJS('https://cdn.rawgit.com/gabrielederosa/SweetPrompt/master/lib/sweet-prompt.min.js');
     addCSS('https://cdn.rawgit.com/gabrielederosa/SweetPrompt/master/lib/sweet-prompt.css');
     
-    setTimeout("$.getScript('http://scratchextproxy.x10.mx/?p=globalVars.js')", 1000);
+    setTimeout("$.getScript('http://scratchextproxy.x10.mx/?p=globalVars.js&mime=text/css')", 1000);
 }
 
 function waitfor(test, expectedValue, msec, callback) {
