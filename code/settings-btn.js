@@ -31,7 +31,7 @@ $('#scratchext-settings').on('click', function() {
         title: "Are you sure?",
         text: "You have unsaved settings.",
         type: "warning",
-        showCancelButton: true;
+        showCancelButton: true,
         confirmButtonText: "Discard changes",
         cancelButtonText: "Cancel",
       }, function() {
