@@ -31,4 +31,3 @@ scratchext.font = function () {
 };
 
 scratchext.font().setup();
-scratchext.log('Lucida Grande installed: '+scratchext.font().isInstalled('Lucida Grande'), 'orange');
