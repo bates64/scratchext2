@@ -13,6 +13,10 @@
   position: absolute;
 }
 
+#scratchext-settings-desc {
+  font-size: 20px;
+}
+
 #scratchext-settings-pane {
   -webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;-o-user-select:none;user-select:none;
   
