@@ -93,7 +93,7 @@ scratchext.dialog = function() {
 		d.className = className || tagName || '';
 		return d;
 	}
-	function Dialog(title, content) {
+	this.Dialog(title, content) {
 		this.el = el('cookievars-dialog cookievars-no-select');
 		this.el.appendChild(this.elTitle = el('cookievars-dialog-title'));
 		this.el.appendChild(this.elContent = content || el('cookievars-dialog-content'));
@@ -110,8 +110,8 @@ scratchext.dialog = function() {
 		get: function() {return this._title},
 		set: function(value) {this._title = this.elTitle.textContent = value}
 	});
-	Dialog.prototype.padding = 4;
-	Dialog.prototype.moveTo = function(x, y) {
+	this.Dialog.prototype.padding = 4;
+	this.Dialog.prototype.moveTo = function(x, y) {
 		var p = this.padding; // NS
 		var bb = this.el.getBoundingClientRect();
 		x = Math.max(p, Math.min(innerWidth - bb.width - p, x));
@@ -125,7 +125,7 @@ scratchext.dialog = function() {
 		this.el.style.OTransform =
 		this.el.style.transform = 'translate('+(x|0)+'px,'+(y|0)+'px)';
 	};
-	Dialog.prototype.show = function(editor) {
+	this.Dialog.prototype.show = function(editor) {
 		this.editor = editor;
 		document.body.appendChild(this.el);
 		var ebb = editor.getBoundingClientRect();
@@ -136,7 +136,7 @@ scratchext.dialog = function() {
 		this.focusFirst(this.elContent);
 		return this;
 	};
-	Dialog.prototype.focusFirst = function(el) {
+	this.Dialog.prototype.focusFirst = function(el) {
 		if (el.tagName === 'INPUT' || el.tagName === 'SELECT' || el.tagName === 'BUTTON') {
 			el.focus();
 			return true;
@@ -147,24 +147,24 @@ scratchext.dialog = function() {
 		}
 		return false;
 	};
-	Dialog.prototype.hide = function() {
+	this.Dialog.prototype.hide = function() {
 		if (this.editor) {
 			document.body.removeChild(this.el);
 			this.editor = null;
 		}
 		return this;
 	};
-	Dialog.prototype.commit = function() {
+	this.Dialog.prototype.commit = function() {
 		if (this.oncommit) this.oncommit();
 		this.hide();
 		return this;
 	};
-	Dialog.prototype.cancel = function() {
+	this.Dialog.prototype.cancel = function() {
 		if (this.oncancel) this.oncancel();
 		this.hide();
 		return this;
 	};
-	Dialog.alert = function(title, text, button, fn, context) {
+	this.Dialog.alert = function(title, text, button, fn, context) {
 		if (typeof button === 'function' || button == null) {
 			context = fn;
 			fn = button;
@@ -177,12 +177,12 @@ scratchext.dialog = function() {
 		if (fn) d.oncommit = fn.bind(context);
 		return d;
 	};
-	Dialog.label = function(text) {
+	this.Dialog.label = function(text) {
 		var div = el('cookievars-dialog-label');
 		div.textContent = text;
 		return div;
 	};
-	Dialog.Field = function(label, value) {
+	this.Dialog.Field = function(label, value) {
 		this.value = '';
 		this.el = el('label', 'cookievars-dialog-label');
 		this.el.textContent = label;
@@ -191,10 +191,10 @@ scratchext.dialog = function() {
 		this.field.addEventListener('input', this.change.bind(this));
 		this.el.appendChild(this.field);
 	};
-	Dialog.Field.prototype.change = function() {
+	this.Dialog.Field.prototype.change = function() {
 		this.value = this.field.value;
 	};
-	Dialog.content = function() {
+	this.Dialog.content = function() {
 		var div = el('');
 		var a = [].slice.call(arguments);
 		for (var i = 0, l = a.length; i < l; i++) {
@@ -202,7 +202,7 @@ scratchext.dialog = function() {
 		}
 		return div;
 	};
-	Dialog.buttons = function() {
+	this.Dialog.buttons = function() {
 		var div = el('cookievars-dialog-buttons');
 		var a = [].slice.call(arguments);
 		for (var i = 0, l = a.length; i < l; i++) {
@@ -215,7 +215,7 @@ scratchext.dialog = function() {
 		}
 		return div;
 	};
-	Dialog.prototype.keyDown = function(e) {
+	this.Dialog.prototype.keyDown = function(e) {
 		if (e.keyCode === 13) {
 			this.commit();
 		}
@@ -223,17 +223,17 @@ scratchext.dialog = function() {
 			this.cancel();
 		}
 	};
-	Dialog.prototype.mouseDown = function(e) {
+	this.Dialog.prototype.mouseDown = function(e) {
 		if (e.target.tagName === 'INPUT' || e.target.tagName === 'BUTTON' || e.target.tagName === 'SELECT' || e.target.tagName === 'LABEL') return;
 		this.dragX = this.x - e.clientX;
 		this.dragY = this.y - e.clientY;
 		document.addEventListener('mousemove', this.mouseMove);
 		document.addEventListener('mouseup', this.mouseUp);
 	};
-	Dialog.prototype.mouseMove = function(e) {
+	this.Dialog.prototype.mouseMove = function(e) {
 		this.moveTo(this.dragX + e.clientX, this.dragY + e.clientY);
 	};
-	Dialog.prototype.mouseUp = function(e) {
+	this.Dialog.prototype.mouseUp = function(e) {
 		this.moveTo(this.dragX + e.clientX, this.dragY + e.clientY);
 		document.removeEventListener('mousemove', this.mouseMove);
 		document.removeEventListener('mouseup', this.mouseUp);
