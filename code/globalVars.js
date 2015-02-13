@@ -105,7 +105,7 @@ scratchext.dialog = {
 		this.title = title;
 		this.x = 0;
 		this.y = 0;
-	};
+	}
 };
 
 /*this.Dialog.defineProperty = function(Dialog.prototype, 'title', {
