@@ -12,6 +12,8 @@ function go() {
     $('body').append("<div class=\"installscratchext editorOnly\" id=\"editorInstall-new\" onclick=\"$(this).css({'background-color':'#632D99', 'color':'#fff', 'font-weight':'bold'})\"><div></div><span>ScratchExt</span></div>");
 
     $('.installscratchext').on('click', function() {
+        $('.installscratchext').off('click');
+        
         if(scratchext.installed.length===0) {
             // install install library
             $.getScript(scratchext.root + '/library/install.js');
