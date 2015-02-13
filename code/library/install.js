@@ -8,9 +8,12 @@ if(scratchext.projectExtensions.indexOf("– Import –") > -1) {
     }
 } else {
     // just in case
-    scratchext.log('Could not find ScratchExt 1.0 trace, adding button');
-    $('a[href=#editor]').before('<a href="javascript:$(\'#load-scratchext-1\').fadeOut();$.getScript(\'http://www.stefanbates.com/library/install.js\');"><div class="button" style="padding:0 5px" id="load-scratchext-1">ScratchExt 1.0</div></a>');
-}
+    if(scratchext.settings.get('1-0-button')) {
+        scratchext.log('Could not find ScratchExt 1.0 trace, adding button');
+        $('a[href=#editor]').before('<a href="javascript:$(\'#load-scratchext-1\').fadeOut();$.getScript(\'http://www.stefanbates.com/library/install.js\');"><div class="button" style="padding:0 5px" id="load-scratchext-1">ScratchExt 1.0</div></a>');
+
+        }
+    }
 
 function createRandomWord(length) {
     var consonants = 'bcdfghjklmnpqrstvwxyz',
