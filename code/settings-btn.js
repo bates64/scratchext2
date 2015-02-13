@@ -85,6 +85,7 @@ scratchext.settings.savedData = function() {
 };
 
 scratchext.settings.save = function() {
+  scratchext.log('Settings: saved');
   localStorage["scratchext-settings"] = scratchext.settings.currentData();
 };
 
