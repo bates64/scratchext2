@@ -93,7 +93,7 @@ scratchext.dialog = function() {
 		d.className = className || tagName || '';
 		return d;
 	}
-	this.Dialog(title, content) {
+	this.Dialog = function(title, content) {
 		this.el = el('cookievars-dialog cookievars-no-select');
 		this.el.appendChild(this.elTitle = el('cookievars-dialog-title'));
 		this.el.appendChild(this.elContent = content || el('cookievars-dialog-content'));
@@ -106,7 +106,7 @@ scratchext.dialog = function() {
 		this.x = 0;
 		this.y = 0;
 	}
-	Object.defineProperty(Dialog.prototype, 'title', {
+	Object.defineProperty = function(Dialog.prototype, 'title', {
 		get: function() {return this._title},
 		set: function(value) {this._title = this.elTitle.textContent = value}
 	});
