@@ -56,14 +56,7 @@ scratchext.settings.load = function() {
   var i = 0;
   
   while(i<scratchext.settings.all.length) {
-    var thing;
-    if(to[i]===true) {
-      thing = 'checked';
-    } else {
-      thing = '';
-    }
-    
-    $('input#' + scratchext.settings.all[i]).attr('checked', thing);
+    $('input#' + scratchext.settings.all[i]).attr('checked', to[i]);
     i++;
   }
 };
