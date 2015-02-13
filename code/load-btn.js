@@ -4,44 +4,47 @@ function go() {
     
     // settings button
     $.getScript(scratchext.root + 'settings-btn.js');
-    
-    // install buttons
-    $('.stats').first().append('<div class="action tooltip bottom installscratchext"><span class="scratchexticon icon">ScratchExt</span></div>');
-    
-    addCSS(scratchext.css_root + '/css/scratchext-editor-btn.css');
-    $('body').append("<div class=\"installscratchext editorOnly\" id=\"editorInstall-new\" onclick=\"$(this).css({'background-color':'#632D99', 'color':'#fff', 'font-weight':'bold'})\"><div></div><span>ScratchExt</span></div>");
-
-    $('.installscratchext').on('click', function() {
-        $('.installscratchext').off('click');
+    waitfor(isSettingsDefined, true, 250, function() {
+        // install buttons
+        $('.stats').first().append('<div class="action tooltip bottom installscratchext"><span class="scratchexticon icon">ScratchExt</span></div>');
         
-        if(scratchext.installed.length===0) {
-            // install install library
-            $.getScript(scratchext.root + '/library/install.js');
+        addCSS(scratchext.css_root + '/css/scratchext-editor-btn.css');
+        
+        if(scratchext.settings.get("editor-button"))
+            $('body').append("<div class=\"installscratchext editorOnly\" id=\"editorInstall-new\" onclick=\"$(this).css({'background-color':'#632D99', 'color':'#fff', 'font-weight':'bold'})\"><div></div><span>ScratchExt</span></div>");
+    
+        $('.installscratchext').on('click', function() {
+            $('.installscratchext').off('click');
             
-            // if the author of the project is you, load the settings library
-            if(scratchext.author) {
-                $.getScript(scratchext.root + '/settings.js');
+            if(scratchext.installed.length===0) {
+                // install install library
+                $.getScript(scratchext.root + '/library/install.js');
+                
+                // if the author of the project is you, load the settings library
+                if(scratchext.author) {
+                    $.getScript(scratchext.root + '/settings.js');
+                }
+                
+                //$.getScript(scratchext.root + '/settings.js');
+                
+                /*swal({
+                    title: "Aw, yeah!",
+                    text: "ScratchExt 2.0 has been installed!",
+                    type: "success",
+                    confirmButtonText: 'Okay',
+                    allowOutsideClick: true
+                });*/
+            } else {
+                $.getScript(scratchext.root + '/library/install.js');
+                /*swal({
+                    title: "Whoa!",
+                    text: "What are you doing?\nScratchExt is already installed!",
+                    type: "error",
+                    confirmButtonText: 'Okay',
+                    allowOutsideClick: true
+                });*/
             }
-            
-            //$.getScript(scratchext.root + '/settings.js');
-            
-            /*swal({
-                title: "Aw, yeah!",
-                text: "ScratchExt 2.0 has been installed!",
-                type: "success",
-                confirmButtonText: 'Okay',
-                allowOutsideClick: true
-            });*/
-        } else {
-            $.getScript(scratchext.root + '/library/install.js');
-            /*swal({
-                title: "Whoa!",
-                text: "What are you doing?\nScratchExt is already installed!",
-                type: "error",
-                confirmButtonText: 'Okay',
-                allowOutsideClick: true
-            });*/
-        }
+        });
     });
 }
 
@@ -101,6 +104,14 @@ function addJS(url) {
 function isScratchDefined() {
     try {
         return Scratch.FlashApp.model !== undefined && data !== undefined;
+    } catch(e) {
+        return false;
+    }
+}
+
+function isSettingsDefined() {
+    try {
+        return scratchext.settings !== udnefined;
     } catch(e) {
         return false;
     }
