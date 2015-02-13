@@ -1,4 +1,5 @@
 scratchext.settings = {};
+scratchext.settings.all = [];
 
 // add a button to the account menu
 $('.logout').before('<li><a id="scratchext-settings" href="javascript:void(0)">ScratchExt Settings</a></li>');
