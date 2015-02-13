@@ -6,8 +6,11 @@
   z-index: 9999999;
 }
 
-span.ui {
-  font-size: 20px;
+#scratchext-settings-save {
+  bottom: 10px;
+  left: 10px;
+  font-size: 2em;
+  position: absolute;
 }
 
 #scratchext-settings-pane {
