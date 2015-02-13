@@ -16,18 +16,6 @@ var scratchext = {
 
 $.getScript(scratchext.root + 'font.js');
 
-/*scratchext.banner.prompt = function(message, callback) {
-    options = {timeout : 0};
-    message += '<iframe class="iframeshim" frameborder="0" scrolling="no"><html><head></head><body></body></html></iframe>';
-    humane.el = $('div.humane')[0];
-
-    notification = humane.log(message, options);
-}
-
-scratchext.banner.clear = function() {
-    humane.hideMsg();
-}*/
-
 scratchext.getWiki = function(lib) {
     return 'http://grannycookies.github.io/scratchext2/help/' + lib + '/';
 };
@@ -64,11 +52,9 @@ scratchext.notes = function() {
 };
 
 scratchext.install = function(name, descriptor, extension) {
-    if(scratchext.installed.indexOf(name)===-1) {
-        scratchext.installed.push(name);
-        scratchext.log('Installed extension "'+name+'"!');
-        ScratchExtensions.register(name, descriptor, extension);
-    }
+	scratchext.installed.push(name);
+	scratchext.log('Installed extension "'+name+'"!');
+	ScratchExtensions.register(name, descriptor, extension);
 };
 
 scratchext.log = function(string, color) {
