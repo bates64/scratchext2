@@ -106,7 +106,7 @@ scratchext.dialog = function() {
 		this.x = 0;
 		this.y = 0;
 	};
-	this.defineProperty = function(Dialog.prototype, 'title', {
+	this.Dialog.defineProperty = function(Dialog.prototype, 'title', {
 		get: function() {return this._title},
 		set: function(value) {this._title = this.elTitle.textContent = value}
 	});
