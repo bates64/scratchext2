@@ -133,3 +133,6 @@ if(scratchext.settings.savedData()===undefined) {
   
   localStorage['scratchext-settings'] = JSON.stringify(to);
 }
+
+// keep this here
+add_scratchext_buttons();
