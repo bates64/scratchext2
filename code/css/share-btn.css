@@ -19,3 +19,11 @@
   
   -webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;-o-user-select:none;user-select:none
 }
+
+/* ScratchExt 1.0 in-editor button */
+#editor-install-scratchext1 {
+  position absolute;
+  top: 0;
+  background-color: #9C9EA2;
+  right: 300px;
+}
