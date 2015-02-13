@@ -94,7 +94,7 @@
 [type="checkbox"]:checked + label:before {
   left:0; top: -3px;
   width: 65px; height: 30px;
-  background: #DDDDDD;
+  background: #d82f2f;
   border-radius: 15px;
   transition: background-color .2s;
 }
@@ -103,16 +103,16 @@
   width: 20px; height: 20px;
   transition: all .2s;
   border-radius: 50%;
-  background: #7F8C9A;
+  background: white;
   top: 2px; left: 5px;
 }
 
 /* on checked */
 [type="checkbox"]:checked + label:before {
-  background:#34495E; 
+  background: #2fd631; 
 }
 [type="checkbox"]:checked + label:after {
-  background: #39D2B4;
+  background: white;
   top: 2px; left: 40px;
 }
 
@@ -129,10 +129,11 @@
   transition: all .2s;
 }
 [type="checkbox"]:not(:checked) + label .ui:before {
-  content: "no";
-  left: 32px
+  content: "off";
+  left: 32px;
+  color: white;
 }
 [type="checkbox"]:checked + label .ui:after {
-  content: "yes";
-  color: #39D2B4;
+  content: "on";
+  color: white;
 }
