@@ -47,9 +47,9 @@ $('#scratchext-settings').on('click', function() {
 
 scratchext.settings.all = [];
 
-scratchext.settings.add = function(name) {
+scratchext.settings.add = function(name, desc) {
   scratchext.settings.all.push(name);
-  $('#scratchext-settings-wrapper').append('<p><input type="checkbox" id="' + name + '" /><label for="' + name + '"><span class="ui"></span>' + name + '</label></p>');
+  $('#scratchext-settings-wrapper').append('<p><input type="checkbox" id="' + name + '" /><label for="' + name + '"><span class="ui"></span>' + desc + '</label></p>');
 };
 
 scratchext.settings.load = function() {
