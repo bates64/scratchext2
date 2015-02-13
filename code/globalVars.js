@@ -106,10 +106,10 @@ scratchext.dialog = function() {
 		this.x = 0;
 		this.y = 0;
 	};
-	this.Dialog.defineProperty = function(Dialog.prototype, 'title', {
+	/*this.Dialog.defineProperty = function(Dialog.prototype, 'title', {
 		get: function() {return this._title},
 		set: function(value) {this._title = this.elTitle.textContent = value}
-	});
+	});*/
 	this.Dialog.prototype.padding = 4;
 	this.Dialog.prototype.moveTo = function(x, y) {
 		var p = this.padding; // NS
