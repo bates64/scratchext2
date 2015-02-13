@@ -52,10 +52,10 @@ scratchext.settings.load = function() {
   if(to[0]===true) {
     thing = 'checked';
   } else {
-    thing = undefined;
+    thing = '';
   }
   
-  $('input[name=test]').attr('checked') = thing;
+  $('input[name=test]').attr('checked', thing);
 };
 
 scratchext.settings.isChecked = function(name) {
