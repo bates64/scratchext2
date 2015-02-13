@@ -51,6 +51,7 @@ function install() {
                 //[' ', 'run custom script %s', 'unsafe', 'somefile.js'],
                 ['-'],
                 ['b', 'scratchext ready?', 'installed'],
+                [' ', 'load scratchext 1.0', 'oldVer'],
                 //['B', 'TEMP: click to share project', 'share'],
                 //[' ', 'TEMP: change project title to %s', 'title', Scratch.INIT_DATA.PROJECT.model.title]
             ],
@@ -59,7 +60,7 @@ function install() {
                 from: ['notes and credits', 'prepare blocks'],
                 
                 // every scratchext lib must go here
-                all: ['web', 'project', 'keys', 'speech'],
+                all: ['web', 'project', 'keys', 'speech', 'data'],
                 
                 // every custom lib must go here
                 custom: ['ripple', 'datanarrative']
@@ -67,6 +68,10 @@ function install() {
                 
             url: scratchext.getWiki('loader')
         };
+        
+        ext.oldver = function() {
+            $('#load-scratchext-1').click();
+        }
         
         ext.custom = function(lib) {
             toLoad.push(lib.toLowerCase());
