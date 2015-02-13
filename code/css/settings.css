@@ -7,6 +7,10 @@
 }
 
 #scratchext-settings-pane {
+  font-family: "Open sans", "Segoe UI", "Segoe WP", Helvetica, Arial, sans-serif;
+  color: #7F8C9A;
+  text-shadow: none !important;
+  
   -webkit-animation: showSweetAlert 0.3s;
   -moz-animation: showSweetAlert 0.3s;
   animation: showSweetAlert 0.3s;
@@ -22,7 +26,6 @@
   
   background-color: white;
   z-index: 99999;
-  text-shadow: 0 !important;
   border-radius: 5px;
 }
 
