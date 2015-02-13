@@ -65,7 +65,7 @@ scratchext.settings.load = function() {
 };
 
 scratchext.settings.isChecked = function(name) {
-  var x =$('input#' + name + ').attr('checked');
+  var x =$('input#' + name).attr('checked');
   if(x==='checked')
     return true;
   return false;
