@@ -53,19 +53,23 @@ scratchext.settings.add = function(name, desc) {
 
 scratchext.settings.load = function() {
   var to = JSON.parse(scratchext.settings.savedData());
+  var i = 0;
   
-  var thing;
-  if(to[0]===true) {
-    thing = 'checked';
-  } else {
-    thing = '';
+  while(i<scratchext.settings.all.length) {
+    var thing;
+    if(to[i]===true) {
+      thing = 'checked';
+    } else {
+      thing = '';
+    }
+    
+    $('input#' + scratchext.settings.all[i]).attr('checked', thing);
+    i++;
   }
-  
-  $('input[name=test]').attr('checked', thing);
 };
 
 scratchext.settings.isChecked = function(name) {
-  var x =$('input#' + name).attr('checked');
+  var x = $('input#' + name).attr('checked');
   if(x==='checked')
     return true;
   return false;
