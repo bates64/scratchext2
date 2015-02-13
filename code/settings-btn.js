@@ -20,8 +20,7 @@ $('#scratchext-settings').on('click', function() {
   $('#scratchext-settings-wrapper').append('<h1>ScratchExt 2.0 Settings</h1>');
   
   // actual settings
-  scratchext.settings.add('test');
-  
+  scratchext.settings.add('test', 'A test setting.');
   scratchext.settings.load();
 
   // save button
