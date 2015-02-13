@@ -59,7 +59,7 @@ function begin() {
     }
     
     addCSS('http://www.stefanbates.com/scratchext2/code/icon.css');
-    //The next addCSS call fixes a glitch that makes the overview scrollbar unusable. (it's a bug in Scratch's website that started today)
+    //The next addCSS call fixes a glitch that makes the overview scrollbar unusable. (it's a bug in Scratch's website that happens in some projects)
     addCSS('https://cdn.rawgit.com/GrannyCookies/scratchext2/master/code/css/overview-fix.css');
 
     // sweet prompt and sweet alert
