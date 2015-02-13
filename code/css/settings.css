@@ -16,7 +16,7 @@
 #scratchext-settings-pane {
   -webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;-o-user-select:none;user-select:none;
   
-  font-family: "Open sans", "Segoe UI", "Segoe WP", Helvetica, Arial, sans-serif;
+  font-family: "Open sans", "Segoe UI", "Segoe WP", Helvetica, Arial, sans-serif !important;
   color: #7F8C9A;
   text-shadow: none !important;
   font-size: ;
@@ -135,9 +135,4 @@
 [type="checkbox"]:checked + label .ui:after {
   content: "yes";
   color: #39D2B4;
-}
-[type="checkbox"]:focus + label:before {
-  border: 1px dashed #777;
-  box-sizing: border-box;
-  margin-top: -1px;
 }
