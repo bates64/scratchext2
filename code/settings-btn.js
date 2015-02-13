@@ -61,6 +61,7 @@ scratchext.settings.load = function() {
       to.push('true');
       i++;
     }
+    scratchext.settings.save();
   } else {
     to = JSON.parse(scratchext.settings.savedData());
   }
