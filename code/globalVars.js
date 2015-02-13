@@ -99,7 +99,153 @@ scratchext.editShow = function() {
     setTimeout(scratchext.editShow, 100);
 };
 
-scratchext.editShow();
+// from pixie.js- scratch-style prompts
+function Dialog(title, content) {
+	this.el = el('cookievars-dialog cookievars-no-select');
+	this.el.appendChild(this.elTitle = el('cookievars-dialog-title'));
+	this.el.appendChild(this.elContent = content || el('cookievars-dialog-content'));
+	if (content) content.classList.add('cookievars-dialog-content');
+	this.el.addEventListener('keydown', this.keyDown.bind(this));
+	this.el.addEventListener('mousedown', this.mouseDown.bind(this));
+	this.mouseMove = this.mouseMove.bind(this);
+	this.mouseUp = this.mouseUp.bind(this);
+	this.title = title;
+	this.x = 0;
+	this.y = 0;
+}
+Object.defineProperty(Dialog.prototype, 'title', {
+	get: function() {return this._title},
+	set: function(value) {this._title = this.elTitle.textContent = value}
+});
+Dialog.prototype.padding = 4;
+Dialog.prototype.moveTo = function(x, y) {
+	var p = this.padding; // NS
+	var bb = this.el.getBoundingClientRect();
+	x = Math.max(p, Math.min(innerWidth - bb.width - p, x));
+	y = Math.max(p, Math.min(innerHeight - bb.height - p, y));
+	if (this.x === x && this.y === y) return;
+	this.x = x;
+	this.y = y;
+	this.el.style.WebkitTransform =
+	this.el.style.MozTransform =
+	this.el.style.msTransform =
+	this.el.style.OTransform =
+	this.el.style.transform = 'translate('+(x|0)+'px,'+(y|0)+'px)';
+};
+Dialog.prototype.show = function(editor) {
+	this.editor = editor;
+	document.body.appendChild(this.el);
+	var ebb = editor.getBoundingClientRect();
+	var tbb = this.el.getBoundingClientRect();
+	this.width = tbb.width | 0;
+	this.height = tbb.height | 0;
+	this.moveTo(Math.floor((Math.max(0, ebb.left) + Math.min(innerWidth, ebb.right) - tbb.width) / 2), Math.floor((Math.max(0, ebb.top) + Math.min(innerHeight, ebb.bottom) - tbb.height) / 2));
+	this.focusFirst(this.elContent);
+	return this;
+};
+Dialog.prototype.focusFirst = function(el) {
+	if (el.tagName === 'INPUT' || el.tagName === 'SELECT' || el.tagName === 'BUTTON') {
+		el.focus();
+		return true;
+	}
+	var c = el.childNodes;
+	for (var i = 0, l = c.length; i < l; i++) {
+		if (this.focusFirst(c[i])) return true;
+	}
+	return false;
+};
+Dialog.prototype.hide = function() {
+	if (this.editor) {
+		document.body.removeChild(this.el);
+		this.editor = null;
+	}
+	return this;
+};
+Dialog.prototype.commit = function() {
+	if (this.oncommit) this.oncommit();
+	this.hide();
+	return this;
+};
+Dialog.prototype.cancel = function() {
+	if (this.oncancel) this.oncancel();
+	this.hide();
+	return this;
+};
+Dialog.alert = function(title, text, button, fn, context) {
+	if (typeof button === 'function' || button == null) {
+		context = fn;
+		fn = button;
+		button = 'OK';
+	}
+	var d = new Dialog(title, Dialog.content(
+		Dialog.label(text),
+		Dialog.buttons(
+			[button, function() {d.commit()}])));
+	if (fn) d.oncommit = fn.bind(context);
+	return d;
+};
+Dialog.label = function(text) {
+	var div = el('cookievars-dialog-label');
+	div.textContent = text;
+	return div;
+};
+Dialog.Field = function(label, value) {
+	this.value = '';
+	this.el = el('label', 'cookievars-dialog-label');
+	this.el.textContent = label;
+	this.field = el('input', 'cookievars-dialog-field');
+	if (value != null) this.field.value = value;
+	this.field.addEventListener('input', this.change.bind(this));
+	this.el.appendChild(this.field);
+};
+Dialog.Field.prototype.change = function() {
+	this.value = this.field.value;
+};
+Dialog.content = function() {
+	var div = el('');
+	var a = [].slice.call(arguments);
+	for (var i = 0, l = a.length; i < l; i++) {
+		div.appendChild(a[i]);
+	}
+	return div;
+};
+Dialog.buttons = function() {
+	var div = el('cookievars-dialog-buttons');
+	var a = [].slice.call(arguments);
+	for (var i = 0, l = a.length; i < l; i++) {
+		var b = a[i];
+		if (typeof b !== 'object') b = [b, b];
+		var button = el('button', 'cookievars-ui-button');
+		button.textContent = b[0];
+		div.appendChild(button);
+		if (b[1]) button.addEventListener('click', b[1]);
+	}
+	return div;
+};
+Dialog.prototype.keyDown = function(e) {
+	if (e.keyCode === 13) {
+		this.commit();
+	}
+	if (e.keyCode === 27) {
+		this.cancel();
+	}
+};
+Dialog.prototype.mouseDown = function(e) {
+	if (e.target.tagName === 'INPUT' || e.target.tagName === 'BUTTON' || e.target.tagName === 'SELECT' || e.target.tagName === 'LABEL') return;
+	this.dragX = this.x - e.clientX;
+	this.dragY = this.y - e.clientY;
+	document.addEventListener('mousemove', this.mouseMove);
+	document.addEventListener('mouseup', this.mouseUp);
+};
+Dialog.prototype.mouseMove = function(e) {
+	this.moveTo(this.dragX + e.clientX, this.dragY + e.clientY);
+};
+Dialog.prototype.mouseUp = function(e) {
+	this.moveTo(this.dragX + e.clientX, this.dragY + e.clientY);
+	document.removeEventListener('mousemove', this.mouseMove);
+	document.removeEventListener('mouseup', this.mouseUp);
+};
 
+scratchext.editShow();
 // tell other file that scratchext has loaded
 go();
