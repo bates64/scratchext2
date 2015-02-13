@@ -66,8 +66,8 @@ scratchext.settings.load = function() {
   }
   
   var i = 0;
-  while(i<=scratchext.settings.all.length) {
-    scratchext.log('Setting "'+scratchext.settings.all[i]+'" has been set to '+to[i])
+  while(i<scratchext.settings.all.length) {
+    scratchext.log('Setting "'+scratchext.settings.all[i]+'" has been set to '+to[i], 'orange')
     $('input#' + scratchext.settings.all[i]).attr('checked', to[i]);
     i++;
   }
