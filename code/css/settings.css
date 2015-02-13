@@ -6,10 +6,15 @@
   z-index: 9999999;
 }
 
+span.ui {
+  font-size: 20px;
+}
+
 #scratchext-settings-pane {
   font-family: "Open sans", "Segoe UI", "Segoe WP", Helvetica, Arial, sans-serif;
   color: #7F8C9A;
   text-shadow: none !important;
+  font-size: ;
   
   -webkit-animation: showSweetAlert 0.3s;
   -moz-animation: showSweetAlert 0.3s;
