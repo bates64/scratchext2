@@ -1,3 +1,11 @@
+.sweet-overlay {
+  z-index: 999999;
+}
+
+.sweet-alert {
+  z-index: 9999999;
+}
+
 #scratchext-settings-pane {
   -webkit-animation: showSweetAlert 0.3s;
   -moz-animation: showSweetAlert 0.3s;
