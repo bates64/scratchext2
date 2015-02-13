@@ -22,7 +22,7 @@ $('#scratchext-settings').on('click', function() {
   
   // actual settings
   scratchext.settings.add('editor-button', 'In-editor "install scratchext" button');
-  scratchext.settings.add('1.0-button', '"install scratchext 1.0" button');
+  scratchext.settings.add('1-0-button', '"install scratchext 1.0" button');
   scratchext.settings.load();
 
   // save button
