@@ -58,7 +58,7 @@ scratchext.settings.get = function(name) {
     a++;
   }
   
-  return JSON.parse(scratchext.settings.currentData())[a];
+  return JSON.parse(scratchext.settings.savedData())[a];
 }
 
 scratchext.settings.load = function() {
