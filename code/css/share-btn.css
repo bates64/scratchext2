@@ -16,4 +16,6 @@
   font-weight: bold;
   border-radius: 5px;
   font-size: 12px;
+  
+  -webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;-o-user-select:none;user-select:none
 }
