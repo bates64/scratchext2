@@ -22,7 +22,7 @@ $('#scratchext-settings').on('click', function() {
   // actual settings
   $('#scratchext-settings-wrapper').append('<br><input type="checkbox" name="test">test</input>');
   
-  scratchext.settings.load();
+  //scratchext.settings.load();
 
   // save button
   $('#scratchext-settings-wrapper').append('<br><h3><a href="javascript:scratchext.settings.save();" id="scratchext-settings-save">Save</a></h3>')
