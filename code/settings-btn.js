@@ -20,7 +20,7 @@ $('#scratchext-settings').on('click', function() {
   $('#scratchext-settings-wrapper').append('<h1>ScratchExt 2.0 Settings</h1>');
   
   // actual settings
-  $('#scratchext-settings-wrapper').append('<br><input type="checkbox" name="test">test</input>');
+  scratchext.settings.add('test');
   
   scratchext.settings.load();
 
@@ -45,6 +45,13 @@ $('#scratchext-settings').on('click', function() {
   });
 });
 
+scratchext.settings.all = [];
+
+scratchext.settings.add = function(name) {
+  scratchext.settings.all.push(name);
+  $('#scratchext-settings-wrapper').append('<p><input type="checkbox" id="' + name + '" /><label for="' + name + '"><span class="ui"></span>' + name + '</label></p>');
+};
+
 scratchext.settings.load = function() {
   var to = JSON.parse(scratchext.settings.savedData());
   
@@ -67,8 +74,12 @@ scratchext.settings.isChecked = function(name) {
 
 scratchext.settings.currentData = function() {
   var settings = [];
+  var i = 0;
   
-  settings.push(scratchext.settings.isChecked('test'));
+  while(i<scratchext.settings.all.length) {
+    settings.push(scratchext.settings.isChecked(scratchext.settings.all[i]));
+    i++;
+  }
   
   return JSON.stringify(settings);
 };
