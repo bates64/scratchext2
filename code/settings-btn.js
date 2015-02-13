@@ -8,7 +8,7 @@ $('#scratchext-settings').on('click', function() {
   if(scratchext.settingsOpen) {
     return false;
   }
-  
+
   scratchext.settingsOpen = true;
   scratchext.log('Settings: opened');
   
@@ -18,9 +18,11 @@ $('#scratchext-settings').on('click', function() {
   
   $('#scratchext-settings-wrapper').append('<a href="javascript:void(0)" id="scratchext-settings-close">x</a>');
   $('#scratchext-settings-wrapper').append('<h1>ScratchExt 2.0 Settings</h1>');
+  scratchext.settings.all = [];
   
   // actual settings
-  scratchext.settings.add('test', 'A test setting.');
+  scratchext.settings.add('editor-button', 'Should the editor button show?');
+  scratchext.settings.add('name', 'desc');
   scratchext.settings.load();
 
   // save button
@@ -44,17 +46,26 @@ $('#scratchext-settings').on('click', function() {
   });
 });
 
-scratchext.settings.all = [];
-
 scratchext.settings.add = function(name, desc) {
   scratchext.settings.all.push(name);
   $('#scratchext-settings-wrapper').append('<p><input type="checkbox" id="' + name + '" /><label for="' + name + '"><span class="ui"></span></label>'+ '<span class="scratchext-settings-desc">' + desc + '</span></p>');
 };
 
 scratchext.settings.load = function() {
-  var to = JSON.parse(scratchext.settings.savedData());
-  var i = 0;
+  var to;
+  if(scratchext.settings.savedData()===undefined) {
+    // default values are currently all "true"
+    to = [];
+    var i = 0;
+    while(i<scratchext.settings.all.length) {
+      to.push('true');
+      i++;
+    }
+  } else {
+    to = JSON.parse(scratchext.settings.savedData());
+  }
   
+  var i = 0;
   while(i<scratchext.settings.all.length) {
     $('input#' + scratchext.settings.all[i]).attr('checked', to[i]);
     i++;
