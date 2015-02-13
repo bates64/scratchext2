@@ -13,6 +13,10 @@
   position: absolute;
 }
 
+p.break {
+  padding-top: 20px;
+}
+
 .scratchext-settings-desc {
   margin-left: 80px;
   font-size: 16px;
