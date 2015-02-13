@@ -47,7 +47,15 @@ $('#scratchext-settings').on('click', function() {
 
 scratchext.settings.load = function() {
   var to = JSON.parse(scratchext.settings.savedData);
-  // todo
+  
+  var thing;
+  if(to[0]===true) {
+    thing = 'checked';
+  } else {
+    thing = undefined;
+  }
+  
+  $('input[name=test]').attr('checked') = thing;
 };
 
 scratchext.settings.isChecked = function(name) {
