@@ -38,7 +38,7 @@ function installExtension() {
             installExtension();
         }
 
-        scratchext.install(name, descriptor, ext);
+        scratchext.install(scratchext.libraries.default.name, descriptor, ext);
     })({});
 }
 installExtension();
