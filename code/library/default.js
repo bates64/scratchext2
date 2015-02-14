@@ -5,7 +5,7 @@ scratchext.libraries.default = {
     advanced:   false
 };
 function installExtension() {
-    ScratchExtensions.unregister(name);
+    ScratchExtensions.unregister(scratchext.libraries.default.name);
     
     (function(ext) {
 
