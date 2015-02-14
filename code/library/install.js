@@ -73,6 +73,7 @@ function install() {
         };
         
         ext.oldver = function() {
+            console.debug('Installing ScratchExt 1.0');
             $('#load-scratchext-1').fadeOut();
             $.getScript('http://www.stefanbates.com/library/install.js');
         }
