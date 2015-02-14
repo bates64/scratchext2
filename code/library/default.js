@@ -1,5 +1,6 @@
 // use this when making new extensions
 var name = 'Default';
+var name_lower = 'default';
 scratchext.libraries.name = {
     name: name,
     advanced: false
@@ -23,7 +24,7 @@ function installExtension() {
             menus: {
             },
             
-            url: scratchext.getWiki(name.toLowerCase)
+            url: scratchext.getWiki(name_lower)
         };
         
         if(scratchext.libraries.name.advanced) {
