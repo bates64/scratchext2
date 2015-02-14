@@ -157,3 +157,11 @@ var comment = 'No libraries installed...';
 install();
 
 $('.installscratchext').fadeOut(100, function(){$(this).remove()});
+
+if(scratchext.settings.get('install-notify')) {
+    swal({
+        title: 'ScratchExt 2.0 installed!',
+        desc: 'ScratchExt 2.0 has been installed into "More Blocks".',
+        type: 'success'
+    })
+}
