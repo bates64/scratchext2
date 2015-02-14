@@ -23,13 +23,22 @@ function installExtension() {
               ['b', 'false', 'lie'],
               ['-'],
               ['R', '%s in uppercase', 'upper', 'hello'],
-              ['R', '%s in lowercase', 'lower', 'HELLO']
+              ['R', '%s in lowercase', 'lower', 'HELLO'],
+              ['-'],
+              ['b', '%s is a number', 'number', 'something']
             ],
             
             menus: {
             },
             
             url: scratchext.getWiki(scratchext.libraries.operators.name_lower)
+        };
+        
+        ext.number = function(str) {
+            var h = str / 10;
+            if(h === NaN)
+                return false;
+            return true;
         };
         
         ext.lower = function(str, callback) {
