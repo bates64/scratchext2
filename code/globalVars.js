@@ -6,6 +6,7 @@ var scratchext = {
     installed: [],
     isShared: Scratch.FlashApp.model.attributes.isPublished,
     id: Scratch.INIT_DATA.PROJECT.model.id,
+    libraries: {},
     root: 'http://scratchextproxy.x10.mx/?p=',
     
     css_root: 'http://scratchextproxy.x10.mx/?mime=text/css&p=',
