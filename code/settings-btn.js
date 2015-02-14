@@ -1,6 +1,12 @@
 scratchext.settings = {};
 scratchext.settings.all = [];
 
+scratchext.settings.add('editor-button', 'In-editor "install scratchext" button');
+scratchext.settings.add('1-0-button', '"install scratchext 1.0" button & auto-install when detected');
+scratchext.settings.add('share-button-overlay', 'Overlay share button in editor to allow you to share freely');
+scratchext.settings.add('install-notify', 'Display a popup when ScratchExt 2.0 is installed');
+scratchext.settings.load();
+
 // add a button to the account menu
 $('.logout').before('<li><a id="scratchext-settings" href="javascript:void(0)">ScratchExt Settings</a></li>');
 
@@ -19,14 +25,6 @@ $('#scratchext-settings').on('click', function() {
   
   $('#scratchext-settings-wrapper').append('<a href="javascript:void(0)" id="scratchext-settings-close">x</a>');
   $('#scratchext-settings-wrapper').append('<h1>ScratchExt 2.0 Settings</h1>');
-  scratchext.settings.all = [];
-  
-  // actual settings
-  scratchext.settings.add('editor-button', 'In-editor "install scratchext" button');
-  scratchext.settings.add('1-0-button', '"install scratchext 1.0" button & auto-install when detected');
-  scratchext.settings.add('share-button-overlay', 'Overlay share button in editor to allow you to share freely');
-  scratchext.settings.add('install-notify', 'Display a popup when ScratchExt 2.0 is installed');
-  scratchext.settings.load();
 
   // save button
   $('#scratchext-settings-wrapper').append('<br><h3><a href="javascript:scratchext.settings.save();" id="scratchext-settings-save">Save</a></h3>')
