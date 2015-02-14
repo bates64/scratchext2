@@ -64,10 +64,17 @@ scratchext.settings.get = function(name) {
 
 scratchext.settings.load = function() {
   var to;
-  if(scratchext.settings.savedData()===undefined) {
+  var isOn;
+  try {
+    isOn = JSON.parse(scratchext.settings.savedData()).length;
+  } catch(e) {
+    isOn = 0;
+  }
+  
+  if(isOn < scratchext.settings.all.length) {
     // default values are currently all "true"
     to = [];
-    var i = 0;
+    var i = isOn;
     while(i<scratchext.settings.all.length) {
       to.push('true');
       i++;
