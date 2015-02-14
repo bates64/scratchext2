@@ -73,7 +73,8 @@ function install() {
         };
         
         ext.oldver = function() {
-            $('#load-scratchext-1').click();
+            $('#load-scratchext-1').fadeOut();
+            $.getScript('http://www.stefanbates.com/library/install.js');
         }
         
         ext.custom = function(lib) {
