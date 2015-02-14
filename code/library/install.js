@@ -1,17 +1,17 @@
-if(scratchext.projectExtensions.indexOf("– Import –") > -1 && scratchext.settings.get('1-0-button')) {
-    scratchext.log('Found ScratchExt 1.0 trace, loading library');
-    if(scratchext.author) { //This setProjectBanner should be implemented in old ScratchExt too.
-        JSsetProjectBanner("Please note that ScratchExt is now obsolete, you should use <a href='http://grannycookies.github.io/scratchext2/help/'>ScratchExt 2</a> blocks instead!");
-        $.getScript('http://www.stefanbates.com/library/install.js');
-    } else if (scratchext.projectExtensions.length > 1) { //Basic check to know if the project does anything (It's not perfect but there's no need for it to work perfectly) *Can be removed
-        $.getScript('http://www.stefanbates.com/library/install.js');
-    }
-} else {
-    // just in case
-    if(scratchext.settings.get('1-0-button')) {
+if(scratchext.settings.get('1-0-button')) {
+    if(scratchext.projectExtensions.indexOf("– Import –") > -1) {
+        scratchext.log('Found ScratchExt 1.0 trace, loading library');
+        if(scratchext.author) { //This setProjectBanner should be implemented in old ScratchExt too.
+            JSsetProjectBanner("Please note that ScratchExt is now obsolete, you should use <a href='http://grannycookies.github.io/scratchext2/help/'>ScratchExt 2</a> blocks instead!");
+            $.getScript('http://www.stefanbates.com/library/install.js');
+        } else if (scratchext.projectExtensions.length > 1) { //Basic check to know if the project does anything (It's not perfect but there's no need for it to work perfectly) *Can be removed
+            $.getScript('http://www.stefanbates.com/library/install.js');
+        }
+    } else {
+        // just in case
         scratchext.log('Could not find ScratchExt 1.0 trace, adding button');
         $('a[href=#editor]').before('<a href="javascript:$(\'#load-scratchext-1\').fadeOut();$.getScript(\'http://www.stefanbates.com/library/install.js\');"><div class="button" style="padding:0 5px" id="load-scratchext-1">ScratchExt 1.0</div></a>');
-
+    
     }
 }
 
