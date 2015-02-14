@@ -83,18 +83,6 @@ scratchext.settings.close = function() {
   }, 300);
 };
 
-if(scratchext.settings.savedData()===undefined) {
-  // default values are currently all "true"
-  var to = [];
-  var i = 0;
-  while(i<scratchext.settings.all.length) {
-    to.push('true');
-    i++;
-  }
-  
-  localStorage['scratchext-settings'] = JSON.stringify(to);
-}
-
 function loadBtns() {
   scratchext.settings.all = [];
   scratchext.settings.add('editor-button', 'In-editor "install scratchext" button');
@@ -102,6 +90,20 @@ function loadBtns() {
   scratchext.settings.add('share-button-overlay', 'Overlay share button in editor to allow you to share freely');
   scratchext.settings.add('install-notify', 'Display a popup when ScratchExt 2.0 is installed');
   scratchext.settings.load();
+  
+  scratchext.settings.usedBefore = true;
+  if(scratchext.settings.savedData()===undefined) {
+    // default values are currently all "true"
+    var to = [];
+    var i = 0;
+    while(i<scratchext.settings.all.length) {
+      to.push('true');
+      i++;
+    }
+    
+    scratchext.settings.usedBefore = false;
+    localStorage['scratchext-settings'] = JSON.stringify(to);
+  }
 }
 
 loadBtns();
@@ -146,6 +148,10 @@ $('#scratchext-settings').on('click', function() {
       scratchext.settings.close();
     }
   });
+  
+  if(scratchext.settings.usedBefore) {
+    $('#scratchext-settings').click();
+  }
 });
 
 // keep this here
