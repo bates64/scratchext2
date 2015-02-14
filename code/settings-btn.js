@@ -23,8 +23,9 @@ $('#scratchext-settings').on('click', function() {
   
   // actual settings
   scratchext.settings.add('editor-button', 'In-editor "install scratchext" button');
-  scratchext.settings.add('1-0-button', 'install scratchext 1.0 button & auto-install when detected');
+  scratchext.settings.add('1-0-button', '"install scratchext 1.0" button & auto-install when detected');
   scratchext.settings.add('share-button-overlay', 'Overlay share button in editor to allow you to share freely');
+  scratchext.settings.add('install-notify', 'Display a popup when ScratchExt 2.0 is installed');
   scratchext.settings.load();
 
   // save button
