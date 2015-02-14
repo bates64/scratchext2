@@ -1,4 +1,4 @@
-if(scratchext.projectExtensions.indexOf("– Import –") > -1) {
+if(scratchext.projectExtensions.indexOf("– Import –") > -1 && scratchext.settings.get('1-0-button')) {
     scratchext.log('Found ScratchExt 1.0 trace, loading library');
     if(scratchext.author) { //This setProjectBanner should be implemented in old ScratchExt too.
         JSsetProjectBanner("Please note that ScratchExt is now obsolete, you should use <a href='http://grannycookies.github.io/scratchext2/help/'>ScratchExt 2</a> blocks instead!");
