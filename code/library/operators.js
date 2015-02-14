@@ -36,9 +36,7 @@ function installExtension() {
         
         ext.number = function(str) {
             var h = str / 10;
-            if(h === NaN)
-                return false;
-            return true;
+            return !isNan(h);
         };
         
         ext.lower = function(str, callback) {
