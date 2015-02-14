@@ -1,9 +1,8 @@
 // use this when making new extensions
-var name = 'Default';
-var name_lower = 'default';
-scratchext.libraries.name = {
-    name: name,
-    advanced: false
+scratchext.libraries.default = {
+    name:       'Default',
+    name_lower: 'default',
+    advanced:   false
 };
 function installExtension() {
     ScratchExtensions.unregister(name);
@@ -24,10 +23,10 @@ function installExtension() {
             menus: {
             },
             
-            url: scratchext.getWiki(name_lower)
+            url: scratchext.getWiki(scratchext.libraries.default.name_lower)
         };
         
-        if(scratchext.libraries.name.advanced) {
+        if(scratchext.libraries.default.advanced) {
             descriptor.blocks.push([' ', 'advanced is on!', 'nothing']);
         } else {
             descriptor.blocks.push(['!', 'advanced (test)', 'advanced']);
@@ -35,7 +34,7 @@ function installExtension() {
         
         // turn advanced on and reload extension
         ext.advanced = function() {
-            scratchext.libraries.name.advanced = true;
+            scratchext.libraries.default.advanced = true;
             installExtension();
         }
 
