@@ -1,6 +1,6 @@
 // this code is run if the user has created the project
 if(!scratchext.isShared) {
-  if(scratchext.settings.get('share')) {
+  if(scratchext.settings.get('share-button-overlay')) {
     // replace share button
     scratchext.log('replacing share button');
     scratchext.addCSS(scratchext.css_root + 'css/share-btn.css');
@@ -12,7 +12,7 @@ if(!scratchext.isShared) {
   // install notification thing
   scratchext.addCSS(scratchext.css_root + 'css/scratchext-installed.css');
   $('.public').text('ScratchExt 2.0 is installed!');
-  // TODO: in-editor scratchext 2.0 is installed
+  // TODO: in-editor scratchext 2.0 is installed?
 }
 
 $('#owner').text('you');
