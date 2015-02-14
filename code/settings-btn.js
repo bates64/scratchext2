@@ -1,14 +1,5 @@
 scratchext.settings = {};
 
-function loadBtns() {
-  scratchext.settings.all = [];
-  scratchext.settings.add('editor-button', 'In-editor "install scratchext" button');
-  scratchext.settings.add('1-0-button', '"install scratchext 1.0" button & auto-install when detected');
-  scratchext.settings.add('share-button-overlay', 'Overlay share button in editor to allow you to share freely');
-  scratchext.settings.add('install-notify', 'Display a popup when ScratchExt 2.0 is installed');
-  scratchext.settings.load();
-}
-
 loadBtns();
 
 // add a button to the account menu
@@ -150,3 +141,12 @@ if(scratchext.settings.savedData()===undefined) {
 
 // keep this here
 add_scratchext_buttons();
+
+function loadBtns() {
+  scratchext.settings.all = [];
+  scratchext.settings.add('editor-button', 'In-editor "install scratchext" button');
+  scratchext.settings.add('1-0-button', '"install scratchext 1.0" button & auto-install when detected');
+  scratchext.settings.add('share-button-overlay', 'Overlay share button in editor to allow you to share freely');
+  scratchext.settings.add('install-notify', 'Display a popup when ScratchExt 2.0 is installed');
+  scratchext.settings.load();
+}
