@@ -46,11 +46,9 @@ function install() {
             
         var desc = {
             blocks: [
-                [' ', 'load libraries from the %m.from', 'load', 'prepare blocks'],
-                ['r', 'total scratchext2 libraries loaded', 'loaded'],
-                ['-'],
                 [' ', 'prepare library %m.all', 'load1', 'web'],
                 [' ', 'prepare custom library %m.custom', 'custom', 'ripple'],
+                ['w', 'load libraries from the %m.from', 'load', 'prepare blocks'],
                 //[' ', 'run custom script %s', 'unsafe', 'somefile.js'],
                 ['-'],
                 ['b', 'scratchext ready?', 'installed'],
@@ -107,7 +105,7 @@ function install() {
             return true;
         };
            
-        ext.load = function(type) {
+        ext.load = function(type, callback) {
             if(type==='prepare blocks') {
                 // todo, maybe
             } else {
@@ -142,6 +140,8 @@ function install() {
             }
             
             toLoad = [];
+            
+            callback();
         };
         
         ext.loaded = function() {
