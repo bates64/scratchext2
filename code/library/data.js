@@ -202,7 +202,7 @@
 		d.oncommit = function() {
 			if (name.value in cookieVars) Dialog.alert('Cannot Add', 'That name is already in use.').show(editor)
 			else {
-				cookieVars[name.value] = '';
+				cookieVars[name.value] = 0;
 				reloadExtension();
 			}
 		};
