@@ -20,7 +20,7 @@ function installExtension() {
         };
 
         ext.userid = function(user, callback) {
-          $.get("http://www.stefanbates.com/api/get_userid.html#"+user, function(html) {
+          $.get("http://www.stefanbates.com/api/get_userid.php#"+user, function(html) {
           	callback(html);
           });
         };
