@@ -1,4 +1,9 @@
+scratchext.userlib = {
+    advanced: false
+};
 function installExtension() {
+    ScratchExtensions.unregister('User');
+    
     (function(ext) {
 
         ext._getStatus = function() {
@@ -10,7 +15,8 @@ function installExtension() {
 
         var descriptor = {
             blocks: [
-                ['R', 'user id of %s', 'userid', scratchext.username]
+                ['R', 'user id of %s', 'userid', scratchext.username],
+                ['-']
             ],
             
             menus: {
@@ -18,6 +24,19 @@ function installExtension() {
             
             url: scratchext.getWiki('user')
         };
+        
+        console.debug(descriptor);
+        if(scratchext.userlib.advanced) {
+            descriptor.blocks.push([' ', 'advanced is on!', 'nothing']);
+        } else {
+            descriptor.blocks.push(['!', 'advanced (test)', 'advanced']);
+        }
+        
+        // turn advanced on and reload extension
+        ext.advanced = function() {
+            scratchext.userlib.advanced = true;
+            installExtension();
+        }
 
         // get userid
         ext.userid = function(user, callback) {
