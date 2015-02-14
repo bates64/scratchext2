@@ -35,7 +35,8 @@ function installExtension() {
         };
         
         ext.number = function(str) {
-            return !isNan(str);
+            var h = isNan(str);
+            return !h;
         };
         
         ext.lower = function(str, callback) {
