@@ -1,6 +1,5 @@
-// maths etc
 scratchext.libraries.operators = {
-    name:       'Operators and Maths',
+    name:       'More Operators',
     name_lower: 'operators',
     advanced:   false
 };
@@ -18,7 +17,13 @@ function installExtension() {
 
         var descriptor = {
             blocks: [
-              ['w', 'if %b then return %s else return %s', 'if', 'true', 'false']
+              ['R', 'if %b then return %s else return %s', 'if', 'true', 'false'],
+              ['-'],
+              ['b', 'true', 'truth'],
+              ['b', 'false', 'lie'],
+              ['-'],
+              ['R', '%s in uppercase', 'upper', 'hello'],
+              ['R', '%s in lowercase', 'lower', 'HELLO']
             ],
             
             menus: {
@@ -27,12 +32,28 @@ function installExtension() {
             url: scratchext.getWiki(scratchext.libraries.operators.name_lower)
         };
         
+        ext.lower = function(str, callback) {
+            callback(str.toLowerCase());
+        };
+        
+        ext.upper = function(str, callback) {
+            callback(str.toUpperCase());
+        };
+        
         ext.if = function(bool, vrai, faux, callback) {
           if(bool) {
             callback(vrai);
           } else {
             callback(faux);
           }
+        };
+        
+        ext.truth = function() {
+            return true;
+        };
+        
+        ext.lie = function() {
+            return false;
         };
 
         scratchext.install(scratchext.libraries.operators.name, descriptor, ext);
