@@ -17,7 +17,7 @@ function installExtension() {
 
         var descriptor = {
             blocks: [
-              ['R', 'if %b then return %s else return %s', 'if', 'true', 'false'],
+              ['R', 'if %b then return %s else return %s', 'if', null, 'true', 'false'],
               ['-'],
               ['b', 'true', 'truth'],
               ['b', 'false', 'lie'],
