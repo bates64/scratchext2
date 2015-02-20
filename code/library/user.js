@@ -5,7 +5,6 @@ function installExtension() {
     ScratchExtensions.unregister('User');
     
     (function(ext) {
-
         ext._getStatus = function() {
             return {
                 status: 2,
@@ -26,7 +25,7 @@ function installExtension() {
 
         // get userid
         ext.userid = function(user, callback) {
-            var img;
+            /*var img;
             var data = window.location.href;
             var username = data.substring(data.match('#').index+1, data.length);
             $.get("http://scratch.mit.edu/users/"+username+'/', function(html) {
@@ -37,6 +36,10 @@ function installExtension() {
                 var userid = src.substr(38, 7);
                 
                 callback(userid);
+            });*/
+            $.get("http://scratch.mit.edu/site-api/users/all/" + user + "/", function(raw) {
+                var json = JSON.parse(raw);
+                scratchext.log(json);
             });
         };
 
