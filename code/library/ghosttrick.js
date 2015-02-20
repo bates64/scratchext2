@@ -14,14 +14,21 @@ function installExtension() {
 
         var descriptor = {
             blocks: [
-                [' ', '        ', 'spacer'],
+                [' ', '              ', 'spacer'],
+                ['R', 'character %m.char: %m.emotion', 'character', 'pico', 'sad']
             ],
             
             menus: {
+                char: ['pico', 'nano'],
+                emotion: ['normal', 'worried', 'sad', 'happy']
             }
         };
 
         ext.spacer = function() {
+        };
+        
+        ext.character = function(char, emotion, callback) {
+            callback(char + ' ' + emotion);
         };
 
         scratchext.install('Ghost Trick', descriptor, ext);
