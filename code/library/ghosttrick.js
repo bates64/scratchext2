@@ -15,7 +15,7 @@ function installExtension() {
         var descriptor = {
             blocks: [
                 [' ', '              ', 'spacer'],
-                ['R', 'character %m.char: %m.emotion', 'character', 'pico', 'sad']
+                ['R', 'character %m.char : %m.emotion', 'character', 'pico', 'sad']
             ],
             
             menus: {
