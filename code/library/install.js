@@ -64,7 +64,7 @@ function install() {
                 all: ['web', 'project', 'keys', 'speech', 'data', 'user', 'operators'],
                 
                 // every custom lib must go here
-                custom: ['ripple', 'datanarrative']
+                custom: ['ripple', 'datanarrative', 'ghosttrick']
             },
                 
             url: scratchext.getWiki('loader')
