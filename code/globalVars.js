@@ -17,6 +17,10 @@ var scratchext = {
 
 $.getScript(scratchext.root + 'font.js');
 
+String.prototype.replaceAll = function(find, replace) {
+	return this.toString().replace(new RegExp(find, 'g'), replace);
+};
+
 scratchext.getWiki = function(lib) {
     return 'http://grannycookies.github.io/scratchext2/help/' + lib + '/';
 };
