@@ -25,13 +25,18 @@ function installExtension() {
               ['R', '%s in uppercase', 'upper', 'hello'],
               ['R', '%s in lowercase', 'lower', 'HELLO'],
               ['-'],
-              ['b', '%s is a number', 'number', 'something']
+              ['b', '%s is a number', 'number', 'something'],
+              ['R', 'replace all %s in %s with %s', 'replaceAllOf', '!', 'hello world!', '.']
             ],
             
             menus: {
             },
             
             url: scratchext.getWiki(scratchext.libraries.operators.name_lower)
+        };
+        
+        ext.replaceAllOf = function(all, str, witdh, callback) {
+            callback(str.replaceAllOf(all, witdh));
         };
         
         ext.number = function(str) {
