@@ -36,7 +36,7 @@ function installExtension() {
         };
         
         ext.replaceAllOf = function(all, str, witdh, callback) {
-            callback(str.replaceAllOf(all, witdh));
+            callback(str.replaceAll(all, witdh));
         };
         
         ext.number = function(str) {
