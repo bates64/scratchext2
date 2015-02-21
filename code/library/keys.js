@@ -3,6 +3,8 @@ function extKeys() {
     var keysPressed = [];
     (function(ext) {
 
+        ext._shutdown = function() {};
+
         ext._getStatus = function() {
             return {status: 2, msg: 'Ready'};
         };
