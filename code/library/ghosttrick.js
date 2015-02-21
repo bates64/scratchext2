@@ -5,6 +5,8 @@ function installExtension() {
     ScratchExtensions.unregister('Ghost Trick');
     
     (function(ext) {
+        ext._shutdown = function() {};
+        
         ext._getStatus = function() {
             return {
                 status: 2,
