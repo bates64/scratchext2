@@ -35,6 +35,8 @@ function createRandomWord(length) {
 
 function install() {
     (function(ext) {
+        ext._shutdown = function() {};
+        
         ext._getStatus = function() {
             return {
                 status: lights,
