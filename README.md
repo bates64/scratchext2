@@ -2,7 +2,9 @@
 Source code for ScratchExt 2.0.
 
 ##Install ScratchExt!
-http://grannycookies.github.io/scratchext2/help/ - You will need one of the following: Greasemonkey (Firefox), Tampermonkey (On Chrome) Or Tampermokey (On Opera). Sorry Windows Explorer users.
+http://grannycookies.github.io/scratchext2/help/
+You will a userscript manager, such as Greasemonkey (for Firefox) or Tampermonkey (for Chrome/Opera)).
+Sorry Internet Explorer users, but if you're using that go and get Chrome or something. Seriously.
 
 ##Contributing
-If you want to contribute, please DO NOT create a new branch. Commit directly to "master" as it will be much easier to maintain.
+Ask @GrannyCookies to be added as collaborator.
