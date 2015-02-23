@@ -15,4 +15,6 @@ if(!scratchext.isShared) {
   // TODO: in-editor scratchext 2.0 is installed?
 }
 
-$('#owner').text('you');
+if(scratchext.settings.get("you")) {
+  $('#owner').text('you');
+}
