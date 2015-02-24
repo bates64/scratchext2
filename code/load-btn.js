@@ -1,44 +1,67 @@
 function add_scratchext_buttons() {
-    // install buttons
-    $('.stats').first().append('<div class="action tooltip bottom installscratchext"><span class="scratchexticon icon">ScratchExt</span></div>');
-    
-    addCSS(scratchext.css_root + '/css/scratchext-editor-btn.css');
-    
-    if(scratchext.settings.get("editor-button"))
-        $('body').append("<div class=\"installscratchext editorOnly\" id=\"editorInstall-new\" onclick=\"$(this).css({'background-color':'#632D99', 'color':'#fff', 'font-weight':'bold'})\"><div></div><span>ScratchExt</span></div>");
-
-    $('.installscratchext').on('click', function() {
-        $('.installscratchext').off('click');
-        
-        if(scratchext.installed.length===0) {
-            // install install library
-            $.getScript(scratchext.root + '/library/install.js');
-            
-            // if the author of the project is you, load the settings library
-            if(scratchext.author) {
-                $.getScript(scratchext.root + '/settings.js');
+    if(scratchext.settings.get('development') === false) {
+        // test, load when scratch has loaded the project stats ;)
+        var old = window.JSsetProjectStats
+        if (old) {
+            var times = 0
+            window.JSsetProjectStats = function() {
+                old.apply(this, arguments)
+                if (times++) {
+                    scratchext.log('Project Loaded! :D');
+                    
+                    // install install library
+                    $.getScript(scratchext.root + '/library/install.js');
+                    
+                    // if the author of the project is you, load the settings library
+                    if(scratchext.author) {
+                        $.getScript(scratchext.root + '/settings.js');
+                    }
+                    
+                }
             }
-            
-            //$.getScript(scratchext.root + '/settings.js');
-            
-            /*swal({
-                title: "Aw, yeah!",
-                text: "ScratchExt 2.0 has been installed!",
-                type: "success",
-                confirmButtonText: 'Okay',
-                allowOutsideClick: true
-            });*/
-        } else {
-            $.getScript(scratchext.root + '/library/install.js');
-            /*swal({
-                title: "Whoa!",
-                text: "What are you doing?\nScratchExt is already installed!",
-                type: "error",
-                confirmButtonText: 'Okay',
-                allowOutsideClick: true
-            });*/
         }
-    });
+    } else {
+        // install buttons
+        $('.stats').first().append('<div class="action tooltip bottom installscratchext"><span class="scratchexticon icon">ScratchExt</span></div>');
+        
+        addCSS(scratchext.css_root + '/css/scratchext-editor-btn.css');
+        
+        if(scratchext.settings.get("editor-button"))
+            $('body').append("<div class=\"installscratchext editorOnly\" id=\"editorInstall-new\" onclick=\"$(this).css({'background-color':'#632D99', 'color':'#fff', 'font-weight':'bold'})\"><div></div><span>ScratchExt</span></div>");
+    
+        $('.installscratchext').on('click', function() {
+            $('.installscratchext').off('click');
+            
+            if(scratchext.installed.length===0) {
+                // install install library
+                $.getScript(scratchext.root + '/library/install.js');
+                
+                // if the author of the project is you, load the settings library
+                if(scratchext.author) {
+                    $.getScript(scratchext.root + '/settings.js');
+                }
+                
+                //$.getScript(scratchext.root + '/settings.js');
+                
+                /*swal({
+                    title: "Aw, yeah!",
+                    text: "ScratchExt 2.0 has been installed!",
+                    type: "success",
+                    confirmButtonText: 'Okay',
+                    allowOutsideClick: true
+                });*/
+            } else {
+                $.getScript(scratchext.root + '/library/install.js');
+                /*swal({
+                    title: "Whoa!",
+                    text: "What are you doing?\nScratchExt is already installed!",
+                    type: "error",
+                    confirmButtonText: 'Okay',
+                    allowOutsideClick: true
+                });*/
+            }
+        });
+    }
 }
 
 function go() {
