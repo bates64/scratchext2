@@ -85,11 +85,12 @@ scratchext.settings.close = function() {
 
 function loadBtns() {
   scratchext.settings.all = [];
-  scratchext.settings.add('editor-button', 'In-editor "install scratchext" button');
-  scratchext.settings.add('1-0-button', '"install scratchext 1.0" button & auto-install when detected');
-  scratchext.settings.add('share-button-overlay', 'Overlay share button in editor to allow you to share freely');
+  scratchext.settings.add('editor-button', 'In-editor "install scratchext" button (overlays "More Blocks")');
+  scratchext.settings.add('1-0-button', '"install scratchext 1.0" button & auto-install it if detected');
+  scratchext.settings.add('share-button-overlay', 'Overlay share button in editor to allow you to share freely (may not work on some computers)');
   scratchext.settings.add('install-notify', 'Display a popup when ScratchExt 2.0 is installed');
-  scratchext.settings.add('you', 'Display "by you" instead of your "by (Your Username)" on the page of projects that you own.');
+  scratchext.settings.add('you', 'Display "by you" instead of your "by '+scratchext.username+'" on the page of projects that you own');
+  scratchext.settings.add('development', 'Turn development mode off');
   scratchext.settings.load();
   
   scratchext.settings.usedBefore = true;
