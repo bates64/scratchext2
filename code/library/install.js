@@ -74,12 +74,12 @@ function install() {
         
         if(!advanced) {
             var block1 = [' ', 'prepare custom library %m.custom', 'custom', 'ripple'];
-            descriptor.blocks.insert(1, block1);
+            desc.blocks.insert(1, block1);
             var block2 = [' ', 'prepare indev library %m.indev', 'indev', 'json'];
-            descriptor.blocks.insert(2, block2);
-            descriptor.blocks.push(['!', 'turn development mode off', 'advancedOff']);
+            desc.blocks.insert(2, block2);
+            desc.blocks.push(['!', 'turn development mode off', 'advancedOff']);
         } else {
-            descriptor.blocks.push(['!', 'turn development mode on', 'advanced']);
+            desc.blocks.push(['!', 'turn development mode on', 'advanced']);
         }
         
         // turn advanced on and reload extension
