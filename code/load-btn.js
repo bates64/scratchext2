@@ -2,7 +2,7 @@ temp_scratchext2_done = false;
 function add_scratchext_buttons() {
     if(scratchext.settings.get('development') === false) {
         // test, load when scratch has loaded the project stats ;)
-        temp_scratchext2_done = true;
+        INSTALL_SCRATCHEXT_2_NOW();
     } else {
         // install buttons
         $('.stats').first().append('<div class="action tooltip bottom installscratchext"><span class="scratchexticon icon">ScratchExt</span></div>');
@@ -97,6 +97,8 @@ function isSettingsDefined() {
 }
 
 function INSTALL_SCRATCHEXT_2_NOW() {
+    scratchext.log('System is going down for scratchext2 load now! :P');
+    
     // install install library
     $.getScript(scratchext.root + '/library/install.js');
     
@@ -108,17 +110,6 @@ function INSTALL_SCRATCHEXT_2_NOW() {
 
 function get_temp_scratchext2_done() {
     return temp_scratchext2_done;
-}
-
-var old = window.JSsetProjectStats;
-if(old) {
-    var times = 0
-    window.JSsetProjectStats = function() {
-        old.apply(this, arguments)
-        if (times++) {
-            waitfor(get_temp_scratchext2_done, true, 250, INSTALL_SCRATCHEXT_2_NOW);
-        }
-    }
 }
 
 waitfor(isScratchDefined, true, 250, begin);
