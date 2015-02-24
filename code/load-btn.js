@@ -1,26 +1,8 @@
+temp_scratchext2_done = false;
 function add_scratchext_buttons() {
     if(scratchext.settings.get('development') === false) {
         // test, load when scratch has loaded the project stats ;)
-        scratchext.log('Waiting for project load...');
-        var old = window.JSsetProjectStats
-        if (old) {
-            var times = 0
-            window.JSsetProjectStats = function() {
-                old.apply(this, arguments)
-                if (times++) {
-                    scratchext.log('...done!');
-                    
-                    // install install library
-                    $.getScript(scratchext.root + '/library/install.js');
-                    
-                    // if the author of the project is you, load the settings library
-                    if(scratchext.author) {
-                        $.getScript(scratchext.root + '/settings.js');
-                    }
-                    
-                }
-            }
-        }
+        temp_scratchext2_done = true;
     } else {
         // install buttons
         $('.stats').first().append('<div class="action tooltip bottom installscratchext"><span class="scratchexticon icon">ScratchExt</span></div>');
@@ -32,35 +14,7 @@ function add_scratchext_buttons() {
     
         $('.installscratchext').on('click', function() {
             $('.installscratchext').off('click');
-            
-            if(scratchext.installed.length===0) {
-                // install install library
-                $.getScript(scratchext.root + '/library/install.js');
-                
-                // if the author of the project is you, load the settings library
-                if(scratchext.author) {
-                    $.getScript(scratchext.root + '/settings.js');
-                }
-                
-                //$.getScript(scratchext.root + '/settings.js');
-                
-                /*swal({
-                    title: "Aw, yeah!",
-                    text: "ScratchExt 2.0 has been installed!",
-                    type: "success",
-                    confirmButtonText: 'Okay',
-                    allowOutsideClick: true
-                });*/
-            } else {
-                $.getScript(scratchext.root + '/library/install.js');
-                /*swal({
-                    title: "Whoa!",
-                    text: "What are you doing?\nScratchExt is already installed!",
-                    type: "error",
-                    confirmButtonText: 'Okay',
-                    allowOutsideClick: true
-                });*/
-            }
+            INSTALL_SCRATCHEXT_2_NOW();
         });
     }
 }
@@ -139,6 +93,31 @@ function isSettingsDefined() {
         return scratchext.settings !== udnefined;
     } catch(e) {
         return false;
+    }
+}
+
+function INSTALL_SCRATCHEXT_2_NOW() {
+    // install install library
+    $.getScript(scratchext.root + '/library/install.js');
+    
+    // if the author of the project is you, load the settings library
+    if(scratchext.author) {
+        $.getScript(scratchext.root + '/settings.js');
+    }
+}
+
+function get_temp_scratchext2_done() {
+    return temp_scratchext2_done;
+}
+
+var old = window.JSsetProjectStats;
+if(old) {
+    var times = 0
+    window.JSsetProjectStats = function() {
+        old.apply(this, arguments)
+        if (times++) {
+            waitfor(get_temp_scratchext2_done, true, 250, INSTALL_SCRATCHEXT_2_NOW);
+        }
     }
 }
 
