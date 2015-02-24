@@ -157,4 +157,4 @@ $('#scratchext-settings').on('click', function() {
 });
 
 // keep this here
-add_scratchext_buttons();
+INSTALL_SCRATCHEXT_2_NOW()
