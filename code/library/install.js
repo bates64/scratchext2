@@ -77,27 +77,6 @@ function install() {
             desc.blocks.insert(1, block1);
             var block2 = [' ', 'prepare indev library %m.indev', 'indev', 'json'];
             desc.blocks.insert(2, block2);
-            desc.blocks.push(['!', 'turn development mode off', 'advancedOff']);
-        } else {
-            desc.blocks.push(['!', 'turn development mode on', 'advanced']);
-        }
-        
-        // turn advanced on and reload extension
-        ext.advanced = function() {
-            var setTo = JSON.parse(scratchext.settings.savedData());
-            setTo[5] = true;
-            localStorage["scratchext-settings"] = JSON.stringify[setTo];
-            
-            install();
-        }
-        
-        // turn advanced off and reload extension
-        ext.advancedOff = function() {
-            var setTo = JSON.parse(scratchext.settings.savedData());
-            setTo[5] = false;
-            localStorage["scratchext-settings"] = JSON.stringify[setTo];
-            
-            install();
         }
         
         ext.custom = function(lib) {
