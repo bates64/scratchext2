@@ -53,7 +53,6 @@ function install() {
                 ['w', 'load libraries from the %m.from', 'load', 'prepare blocks'],
                 ['-'],
                 ['b', 'scratchext ready?', 'installed'],
-                ['-']
             ],
                 
             menus: {
