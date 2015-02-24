@@ -1,24 +1,3 @@
-temp_scratchext2_done = false;
-function add_scratchext_buttons() {
-    if(scratchext.settings.get('development') === false) {
-        // test, load when scratch has loaded the project stats ;)
-        INSTALL_SCRATCHEXT_2_NOW();
-    } else {
-        // install buttons
-        $('.stats').first().append('<div class="action tooltip bottom installscratchext"><span class="scratchexticon icon">ScratchExt</span></div>');
-        
-        addCSS(scratchext.css_root + '/css/scratchext-editor-btn.css');
-        
-        if(scratchext.settings.get("editor-button"))
-            $('body').append("<div class=\"installscratchext editorOnly\" id=\"editorInstall-new\" onclick=\"$(this).css({'background-color':'#632D99', 'color':'#fff', 'font-weight':'bold'})\"><div></div><span>ScratchExt</span></div>");
-    
-        $('.installscratchext').on('click', function() {
-            $('.installscratchext').off('click');
-            INSTALL_SCRATCHEXT_2_NOW();
-        });
-    }
-}
-
 function go() {
     scratchext.log('Loaded ScratchExt 2.0');
     scratchext.log('Root folder: '+scratchext.root, 'orange');
