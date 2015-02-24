@@ -19,18 +19,24 @@ function installExtension() {
 
         var descriptor = {
             blocks: [
-              [' ', 'set cursor to %m.cursor', 'set', 'none']
+              [' ', 'set cursor to %m.cursor', 'setv', 'none'],
+              [' ', 'set cursor to URL %s', 'seturl', 'somecursor.png']
             ],
             
             menus: {
+                cursor: ['none', 'default', 'help', 'pointer', 'wait', 'progress', 'crosshair', 'move', 'not-allowed', 'all-scroll', 'zoom-in', 'zoom-out', 'grab', 'grabbing']
             },
             
             url: scratchext.getWiki(scratchext.libraries.cursor.name_lower)
         };
         
-        ext.setv = function() {
-            // todo
-        }
+        ext.setv = function(name) {
+            $('.stage').css('cursor', name);
+        };
+        
+        ext.seturl = function(url) {
+            $('.stage').css('cursor', 'url(' + name + ')');
+        };
 
         scratchext.install(scratchext.libraries.cursor.name, descriptor, ext);
     })({});
