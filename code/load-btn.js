@@ -1,13 +1,14 @@
 function add_scratchext_buttons() {
     if(scratchext.settings.get('development') === false) {
         // test, load when scratch has loaded the project stats ;)
+        scratchext.log('Waiting for project load...');
         var old = window.JSsetProjectStats
         if (old) {
             var times = 0
             window.JSsetProjectStats = function() {
                 old.apply(this, arguments)
                 if (times++) {
-                    scratchext.log('Project Loaded! :D');
+                    scratchext.log('...done!');
                     
                     // install install library
                     $.getScript(scratchext.root + '/library/install.js');
