@@ -1,17 +1,31 @@
 // ==UserScript==
 // @name         ScratchExt 2.0
-// @version      2.0
+// @version      3.0
 // @description  In development!
 // @grant        GM_setClipboard
 // @grant        unsafeWindow
 // @match        *://scratch.mit.edu/projects/*
+// @run-at document-end
 // ==/UserScript==
+ 
+var script = document.createElement('script');
+script.textContent = '('+function() {
+  var old = window.JSsetProjectStats;
+  if (old) {
+    var times = 0;
+    window.JSsetProjectStats = function() {
+      old.apply(this, arguments);
+      if (times++) {
+          localStorage['scratchext2ver'] = 2;
 
-localStorage['scratchext2ver'] = 1;
-
-var js = document.createElement("script");
-
-js.type = "text/javascript";
-js.src = 'http://scratchextproxy.x10.mx/?p=start.js';
-
-document.body.appendChild(js);
+          var js = document.createElement("script");
+          
+          js.type = "text/javascript";
+          js.src = 'http://scratchextproxy.x10.mx/?p=start.js';
+          
+          document.body.appendChild(js);
+      }
+    }
+  }
+}+')()';
+document.body.appendChild(script);
