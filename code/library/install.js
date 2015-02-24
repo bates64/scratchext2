@@ -45,37 +45,59 @@ function install() {
         };
         
         window.toLoad = [];
+        var advanced = scratchext.settings.get('development');
             
         var desc = {
             blocks: [
                 [' ', 'prepare library %m.all', 'load1', 'web'],
-                [' ', 'prepare custom library %m.custom', 'custom', 'ripple'],
                 ['w', 'load libraries from the %m.from', 'load', 'prepare blocks'],
-                //[' ', 'run custom script %s', 'unsafe', 'somefile.js'],
                 ['-'],
                 ['b', 'scratchext ready?', 'installed'],
-                [' ', 'load scratchext 1.0', 'oldVer'],
-                //['B', 'TEMP: click to share project', 'share'],
-                //[' ', 'TEMP: change project title to %s', 'title', Scratch.INIT_DATA.PROJECT.model.title]
+                ['-']
             ],
                 
             menus: {
                 from: ['notes and credits', 'prepare blocks'],
                 
                 // every scratchext lib must go here
-                all: ['web', 'project', 'keys', 'speech', 'data', 'user', 'operators', 'json', 'cursor'],
+                all: ['web', 'project', 'keys', 'speech', 'data', 'user', 'operators'],
                 
                 // every custom lib must go here
-                custom: ['ripple', 'datanarrative', 'ghosttrick']
+                custom: ['ripple', 'datanarrative', 'ghosttrick'],
+                
+                // every indev scratchext lib must go here
+                indev: ['json', 'cursor']
             },
                 
             url: scratchext.getWiki('loader')
         };
         
-        ext.oldver = function() {
-            console.debug('Installing ScratchExt 1.0');
-            $('#load-scratchext-1').fadeOut();
-            $.getScript('http://www.stefanbates.com/library/install.js');
+        if(!advanced) {
+            var block1 = [' ', 'prepare custom library %m.custom', 'custom', 'ripple'];
+            descriptor.blocks.insert(1, block1);
+            var block2 = [' ', 'prepare indev library %m.indev', 'indev', 'json'];
+            descriptor.blocks.insert(2, block2);
+            descriptor.blocks.push(['!', 'turn development mode off', 'advancedOff']);
+        } else {
+            descriptor.blocks.push(['!', 'turn development mode on', 'advanced']);
+        }
+        
+        // turn advanced on and reload extension
+        ext.advanced = function() {
+            var setTo = JSON.parse(scratchext.settings.savedData());
+            setTo[5] = true;
+            localStorage["scratchext-settings"] = JSON.stringify[setTo];
+            
+            install();
+        }
+        
+        // turn advanced off and reload extension
+        ext.advancedOff = function() {
+            var setTo = JSON.parse(scratchext.settings.savedData());
+            setTo[5] = false;
+            localStorage["scratchext-settings"] = JSON.stringify[setTo];
+            
+            install();
         }
         
         ext.custom = function(lib) {
