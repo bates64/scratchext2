@@ -9,4 +9,4 @@ Sorry Internet Explorer users, but if you're using that go and get Chrome or som
 The download links for Greasemonkey and Tampermonkey are included in the information guide.
 
 ##Contributing
-Ask @GrannyCookies to be added as collaborator.
+Ask GrannyCookies to be added as collaborator on [Scratch.](http://scratch.mit.edu/users/GrannyCookies/)
