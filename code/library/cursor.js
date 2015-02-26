@@ -42,3 +42,4 @@ function installExtension() {
     })({});
 }
 installExtension();
+scratchext.log("Cursor stuffs haz been loaded yey");
