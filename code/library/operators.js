@@ -46,6 +46,11 @@ function installExtension() {
             callback(str.substr(0, start+1));
         };
         
+        ext.sub = function(start, end, str)
+        {
+            callback(str.substr(start+1, end+1));
+        };
+        
         ext.replaceAllOf = function(all, str, witdh, callback) {
             callback(str.replaceAll(all, witdh));
         };
