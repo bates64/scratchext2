@@ -28,13 +28,22 @@ function installExtension() {
               ['R', '%s in lowercase', 'lower', 'HELLO'],
               ['-'],
               ['b', '%s is a number', 'number', 'something'],
-              ['R', 'replace all %s in %s with %s', 'replaceAllOf', '!', 'hello world!', '.']
+              ['R', 'replace all %s in %s with %s', 'replaceAllOf', '!', 'hello world!', '.'],
+              ['-'],
+              ['R', 'first %n letters of %s', 'firstSub', '5', 'hello world'],
+              ['R', 'last %n letters of %s', 'lastSub', '5', 'hello world'],
+              ['R', 'letters %n through %n of %s', 'sub', '8', '12', 'scratchext 2.0']
             ],
             
             menus: {
             },
             
             url: scratchext.getWiki(scratchext.libraries.operators.name_lower)
+        };
+        
+        ext.lastSub = function(start, str, callback) {
+            var end = str.length;
+            callback(str.substr(0, start+1));
         };
         
         ext.replaceAllOf = function(all, str, witdh, callback) {
