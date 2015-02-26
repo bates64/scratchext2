@@ -95,6 +95,10 @@ function install() {
             toLoad.push(lib.toLowerCase());
         };
         
+        ext.indev = function(lib) {
+            toLoad.push(lib.toLowerCase());
+        };
+        
         ext.title = function(e) {
             JSeditTitle(e);
         };
