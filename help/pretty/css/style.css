@@ -7,11 +7,6 @@ body {
     font-weight: 500;
 }
 
-#zoom {
-    -moz-transform: scale(2);
-    -moz-transform-origin: 100 100;
-}
-
 ::selection{
     background:#ff12ae;
     color:#fff
