@@ -9,7 +9,7 @@ body {
 
 #zoom {
     -moz-transform: scale(2);
-    -moz-transform-origin: 0 0;
+
 }
 
 ::selection{
