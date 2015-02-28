@@ -36,7 +36,7 @@ function installExtension() {
         
         // get username from id
         ext.username = function(id, callback) {
-            $.get("http://scratch.mit.edu/api/v1/user/" + user + "/?format=json", function(data) {
+            $.get("http://scratch.mit.edu/api/v1/user/" + id + "/?format=json", function(data) {
                 callback(data['username']);
             });
         };
