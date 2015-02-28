@@ -25,10 +25,12 @@ scratchext.getWiki = function(lib) {
     return 'http://grannycookies.github.io/scratchext2/help/' + lib + '/';
 };
 
+// disabled because of error :(
 scratchext.projectJSON = function(id, callback) {
-    $.get("http://projects.scratch.mit.edu/internalapi/project/"+id.toString()+"/get/", function(data) {
+    /*$.get("http://scratch.mit.edu/internalapi/project/"+id.toString()+"/get/", function(data) {
         callback(data);
-    });
+    });*/
+    callback(false);
 }
 
 scratchext.projectJSON(scratchext.id, function(data) {
