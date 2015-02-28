@@ -169,6 +169,7 @@ if(scratchext.settings.get('install-notify')) {
     swal({
         title: 'ScratchExt 2.0 installed!',
         desc: 'ScratchExt 2.0 has been installed into "More Blocks".',
+        timer: 1000,
         type: 'success'
     })
 }
