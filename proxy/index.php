@@ -1,6 +1,7 @@
 <?php
 //http://scratchextproxy.x10.mx/?p=start.js&mime=text/javascript
 header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Headers: Origin, x-requested-with, content-type, accept");
 
 $mime_type = $_GET['mime'];
 if($mime_type != '') {
