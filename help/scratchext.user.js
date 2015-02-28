@@ -8,6 +8,20 @@
 // @run-at document-end
 // ==/UserScript==
  
+ function waitfor(test, expectedValue, msec, callback) {
+    while (test() !== expectedValue) {
+        setTimeout(function() {
+            waitfor(test, expectedValue, msec, callback);
+        }, msec);
+        return;
+    }
+    callback();
+}
+
+function JSsetProjectStatsDefined() {
+    return typeof JSsetProjectStats !== 'undefined';
+}
+ 
 var script = document.createElement('script');
 script.textContent = '('+function() {
   var old = window.JSsetProjectStats;
