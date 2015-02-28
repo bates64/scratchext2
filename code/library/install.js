@@ -59,7 +59,7 @@ function install() {
                 from: ['notes and credits', 'prepare blocks'],
                 
                 // every scratchext lib must go here
-                all: ['web', 'project', 'keys', 'speech', 'data', 'user', 'operators'],
+                all: ['web', 'project', 'keys', 'speech', 'data', 'user', 'operators', 'encoding'],
                 
                 // every custom lib must go here
                 custom: ['ripple', 'datanarrative', 'ghosttrick'],
