@@ -62,7 +62,7 @@ function install() {
                 all: ['web', 'project', 'keys', 'speech', 'data', 'user', 'operators', 'encoding'],
                 
                 // every custom lib must go here
-                custom: ['ripple', 'datanarrative', 'ghosttrick'],
+                custom: ['ripple', 'datanarrative', 'ghosttrick', 'extscript'],
                 
                 // every indev scratchext lib must go here
                 indev: ['json', 'cursor']
