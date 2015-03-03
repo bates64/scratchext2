@@ -10,3 +10,7 @@ The download links for Greasemonkey and Tampermonkey are included in the informa
 
 ##Contributing
 Ask GrannyCookies to be added as collaborator on [Scratch.](http://scratch.mit.edu/users/GrannyCookies/)
+
+##News
+- Got .zip releases going. So you can pretty much find out the sourcecode by pressing the releases button at the top of this repositry. 
+- Any other news can be listed
