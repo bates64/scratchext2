@@ -34,17 +34,19 @@ function installExtension() {
               ['R', 'last %n letters of %s', 'lastSub', '5', 'hello world'],
               ['R', 'letters %n through %n of %s', 'sub', '8', '12', 'scratchext 2.0']
               ['-']
-              ['R', 'e', 'mathe']
+              ['r', '%m.math', 'mathe']
             ],
             
             menus: {
+                math: ['e', 'pi']
             },
             
             url: scratchext.getWiki(scratchext.libraries.operators.name_lower)
         };
         
-        ext.mathe = function(){
-            caallback(Math.E);
+        ext.mathe = function(i){
+            if(i === 'e') {return Math.e}
+            if(i === 'pi') {return Math.pi}
         }
         
         ext.lastSub = function(start, str, callback) {
