@@ -34,7 +34,7 @@ function installExtension() {
               ['R', 'last %n letters of %s', 'lastSub', '5', 'hello world'],
               ['R', 'letters %n through %n of %s', 'sub', '8', '12', 'scratchext 2.0']
               ['-']
-              ['r', '%m.math', 'mathe']
+              ['r', '%m.math', 'mathe', 'pi']
             ],
             
             menus: {
