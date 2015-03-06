@@ -33,6 +33,8 @@ function installExtension() {
               ['R', 'first %n letters of %s', 'firstSub', '5', 'hello world'],
               ['R', 'last %n letters of %s', 'lastSub', '5', 'hello world'],
               ['R', 'letters %n through %n of %s', 'sub', '8', '12', 'scratchext 2.0']
+              ['-']
+              ['R', 'e', 'mathe']
             ],
             
             menus: {
@@ -40,6 +42,10 @@ function installExtension() {
             
             url: scratchext.getWiki(scratchext.libraries.operators.name_lower)
         };
+        
+        ext.mathe = function(){
+            caallback(Math.E);
+        }
         
         ext.lastSub = function(start, str, callback) {
             var end = str.length;
